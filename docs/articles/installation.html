@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Installing PnP Wsl2 | PnP.Wsl2 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Installing PnP Wsl2 | PnP.Wsl2 ">
+    
+    
+      <link rel="shortcut icon" href="../https://c.s-microsoft.com/favicon.ico?v2">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="PnP.Wsl2">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="installing-pnp-wsl2">Installing PnP Wsl2</h1>
+
+<p><br>
+You need PowerShell 7.2 or later to use PnP Wsl2. It is available for Windows and can be <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4">installed through here</a>.</p>
+<p>You can run the following commands to install the latest PowerShell cmdlets for the current user:</p>
+<pre><code class="lang-powershell">Install-Module PnP.Wsl2 -Scope CurrentUser
+</code></pre>
+<p>Upon first use, you'll be prompted to set the root folder for the module's assets.</p>
+<pre><code class="lang-powershell">PnPWsl2 assets are not present in the system
+Input PnP.Wsl2 Rootfolder [default [C:\Users\&lt;CurrentUser&gt;]]
+</code></pre>
+<p>The module creates a folder named PnPWsl2, containing two subfolders:</p>
+<ul>
+<li><strong>instances</strong>: All running Wsl2 instances created by this module.</li>
+<li><strong>mods</strong>: Bash scripts for execution in your WSL instances, covering a range of functionalities.</li>
+</ul>
+<h2 id="updating-pnp-wsl2">Updating PnP Wsl2</h2>
+<p>If you already have PnP Wsl2 installed and just want to update to the latest version you can follow these steps.</p>
+<p>You need PowerShell 7.2 or later to use PnP WSL2. It is available for Windows and can be <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4">installed through here</a>.</p>
+<p>You can run the following commands to update to the latest stable PowerShell cmdlets for the current user:</p>
+<pre><code class="lang-powershell">Update-Module PnP.Wls2 -Scope CurrentUser
+</code></pre>
+<h2 id="uninstalling-pnp-wsl2">Uninstalling PnP Wsl2</h2>
+<p><br>
+In case you would like to remove PnP Wsl2, you can run:</p>
+<pre><code class="lang-powershell">Uninstall-Module PnP.Wls2 -AllVersions
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Importing or updating the Pnp WSL2 module will <strong>not remove any existing wsl instances</strong> .</p>
+<p>However, out of the box <a href="/candy/index.html">Candy</a> assets will be updated, the system will detect the changes and will prompt you to overwrite or overwrite and backup.</p>
+<p><a href="/candy/index.html">Candy</a> assets under the <a href="/candy/index.html#myscripts">MyScripts</a> will <strong>not</strong> be overwritten.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ScoutmanPt/test/blob/main/pages/articles/installation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+
+      <a href="https://www.scoutman.pt"><img src="../images/scoutmanpt.png" width="25px" style="margin:2px 8px 6px 1px"></a><span>Generated by <strong>DocFX</strong></span>
+
+          </div>
+        </div>
+      <script type="text/javascript" src="../styles/main.js"></script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7R3DFBRCTX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7R3DFBRCTX');
+      </script>
+      <script type="text/javascript">
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "l4r7k3f6hi");
+      </script>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

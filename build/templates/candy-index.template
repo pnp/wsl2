@@ -1,0 +1,17 @@
+
+## 🍬 What is a PnPWls2 Candy?
+\
+A "Candy" is simply a bash script to be applied on a WSL\Linux environment .
+It can be use to install applications, configure settings or even populate linux environments  (yeah , #sky is the limit !) .
+
+## Candy Pot ...
+
+PnP Wsl2 Candy Pot has around **{0}** items which can help setting up, configuring and maintaining the linux environments inside our WSL instances. Each of the cmdlets is documented to aid in learning how to use it . Hey ... you can even add your [own](index.html#myscripts) !
+
+{1}
+
+
+\
+**Important Note:**
+Updating\Importing the Pnp WSL2 module will **not remove any existing assets**.
+However out of the box [Candy](/candy/index.html) assets will be updated ( the system will detect the changes and will prompt you). Candy under the [MyScripts](/candy/index.html#myscripts) will **not** be overwritten.

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title> | PnP.Wsl2 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content=" | PnP.Wsl2 ">
+    
+    
+      <link rel="shortcut icon" href="../https://c.s-microsoft.com/favicon.ico?v2">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="PnP.Wsl2">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<h2 id="-what-is-a-pnpwls2-candy">🍬 What is a PnPWls2 Candy?</h2>
+<p><br>
+A &quot;Candy&quot; is simply a bash script to be applied on a WSL\Linux environment .
+It can be use to install applications, configure settings or even populate linux environments  (yeah , #sky is the limit !) .</p>
+<h2 id="candy-pot-">Candy Pot ...</h2>
+<p>PnP Wsl2 Candy Pot has around <strong>24</strong> items which can help setting up, configuring and maintaining the linux environments inside our WSL instances. Each of the cmdlets is documented to aid in learning how to use it . Hey ... you can even add your <a href="index.html#myscripts">own</a> !</p>
+<h3 id="azure">Azure</h3>
+<ul>
+<li><h4 id="ub-az-azurecli">🍭ub-az-AzureCli</h4>
+<p>Installs Azure Cli .</p>
+<p><a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Azure Cli</a> is a Microsoft Azure command-line tool used to create and manage Azure resources</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-az-AzureCli -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-az-azureclicreatepat">🍭ub-az-AzureCli+CreatePAT</h4>
+<p>Installs Azure Cli and CreatePAT candy</p>
+<p>A personal access token contains your security credentials for Azure DevOps.</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-az-AzureCli+CreatePAT -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-az-createpat">🍭ub-az-CreatePAT</h4>
+Creates a AzureDevOps Personal Access Token that is valid for 1 year</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-az-CreatePAT -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-az-sshkeyaddtoazdevops">🍭ub-az-SSHKeyAddToAzDevops</h4>
+<p>This script is used to add a WSL SSH key to an Azure DevOps organization</p>
+<ol>
+<li>It prompts the user to enter the Azure DevOps organization and the SSH key name</li>
+<li>Gets the SSH key from the .ssh directory</li>
+<li>Adds the SSH key to the Azure DevOps organization</li>
+</ol>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-az-SSHKeyAddToAzDevops -Instance myinstance
+</code></pre>
+<h3 id="m365">M365</h3>
+<ul>
+<li><h4 id="ub-m365-pnpclimicrosoft365">🍭ub-m365-PnPCliMicrosoft365</h4>
+<p>Installs @pnp/cli-microsoft365.</p>
+<p><a href="https://pnp.github.io/cli-microsoft365/">pnp/cli-microsoft365</a> is a command-line interface (CLI) that allows users to manage
+their Microsoft 365 tenant and SharePoint Framework projects on any platform</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-m365-PnPCliMicrosoft365 -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-m365-pnppowershell">🍭ub-m365-PnPPowerShell</h4>
+<p>Installs PnP.PowerShell.</p>
+<p><a href="https://pnp.github.io/powershell/">PnP.PowerShell</a> is a cross-platform PowerShell Module that provides over 650 cmdlets to work with Microsoft 365 environments</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-m365-PnPPowerShell -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-m365-pscorepnppowershell">🍭ub-m365-PSCore+PnPPowerShell</h4>
+This script will install PowerShell Core and PnP.PowerShell</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-m365-PSCore+PnPPowerShell -Instance myinstance
+</code></pre>
+<h3 id="node">Node</h3>
+<ul>
+<li><h4 id="ub-node-install">🍭ub-node-Install</h4>
+<p>Installs a specified version of <a href="https://nodejs.org/en">Node.js</a> using the Node Version Manager (NVM).</p>
+<ol>
+<li>It first checks if the requested version is already installed.</li>
+<li>If the requested version is not installed, the script installs it using NVM</li>
+<li>Sets installed version as the current version</li>
+</ol>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-node-Install -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-node-nvm">🍭ub-node-Nvm</h4>
+<p>Installs the Node Version Manager (nvm).</p>
+<p><a href="https://github.com/nvm-sh/nvm">Node Version Manager (NVM)</a> is a tool used to download, install, manage, and upgrade Node.js versions</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-node-Nvm -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-node-rimraf">🍭ub-node-RimRaf</h4>
+<p>Installs the RimRaf Node tool.</p>
+<p><a href="https://github.com/isaacs/rimraf">RimRaf</a> is a utility for Node.js that provides a faster alternative to the 'rm -rf' shell command.<br>
+It allows for deep recursive deletion of files and folders</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-node-RimRaf -Instance myinstance
+</code></pre>
+<h3 id="powershell">PowerShell</h3>
+<ul>
+<li><h4 id="ub-pwsh-powershellcore">🍭ub-pwsh-PowerShellCore</h4>
+<p>Installs the latest version of PowerShell Core.</p>
+<p><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/?view=powershell-7.4">PowerShell Core</a> is a cross-platform automation and configuration tool/framework that works on Windows, Linux, and macOS.
+It is based on .NET Core, which allows it to be multiplatform</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-pwsh-PowerShellCore -Instance myinstance
+</code></pre>
+<h3 id="python">Python</h3>
+<ul>
+<li><h4 id="ub-python-miniconda-tensorflow-directml">🍭ub-python-Miniconda-TensorFlow-DirectML</h4>
+<p>Set up TensorFlow with DirectML (run machine learning (ML) training on existing hardware).</p>
+<p>Before installing the TensorFlow with DirectML package inside WSL, <strong>you need to install the latest drivers</strong>
+from your GPU hardware vendor. These drivers enable the Windows GPU to work with WSL. <a href="https://learn.microsoft.com/en-gb/windows/ai/directml/gpu-tensorflow-wsl?utm_source=pocket_saves#amd">AMD</a> <a href="https://learn.microsoft.com/en-gb/windows/ai/directml/gpu-tensorflow-wsl?utm_source=pocket_saves#intel">Intel</a> <a href="https://learn.microsoft.com/en-gb/windows/ai/directml/gpu-tensorflow-wsl?utm_source=pocket_saves#nvidia">AMD</a></p>
+<p>To enable TensorFlow with DirectML in WSL, we are installing Miniconda,Tensorflow and  DirectML.This candy does all the work for you
+Instructions followed from <a href="https://learn.microsoft.com/en-gb/windows/ai/directml/gpu-tensorflow-wsl">Microsoft</a></p>
+<p><a href="https://docs.anaconda.com/free/miniconda/index.html">Miniconda</a> is a small bootstrap version of Anaconda: includes  conda, Python, usefull pkgs
+<a href="https://www.tensorflow.org/">Tensorflow</a> is a open source machine learning platform<br>
+<a href="https://github.com/microsoft/DirectML">DirectML</a> is a high-performance, hardware-accelerated DirectX 12 library for machine learning</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-python-Miniconda-TensorFlow-DirectML -Instance myinstance
+</code></pre>
+<h3 id="sharepoint-framework">SharePoint Framework</h3>
+<ul>
+<li><h4 id="ub-spfx-fulldevenvironment">🍭ub-spfx-FullDevEnvironment</h4>
+<p>This script will install all needed assets for SharePoint Framework Development environment following Microsoft guidance
+mentioned <a href="https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment">here</a></p>
+<ol>
+<li>It will install <strong>nvm</strong> , <strong>node</strong> (you can select the version), <a href="https://github.com/gulpjs/gulp-cli">gulp-cli</a>, <a href="https://yeoman.io/">yeoman</a>,
+<a href="https://www.npmjs.com/package/@microsoft/generator-sharepoint">microsoft yeoman generator</a>, and <a href="https://github.com/s-KaiNet/spfx-fast-serve">spfxfastserve</a></li>
+<li><strong>Create the sfpx self-signed developer certificate</strong></li>
+<li><strong>Import</strong> the certificate to your <strong>windows local computer store</strong></li>
+<li>Will also <strong>create the sshkey in wsl updating it to your windows host</strong></li>
+<li><strong>Import sshkey</strong> into your Azure Devops instance</li>
+</ol>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-spfx-FullDevEnvironment -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-spfx-git-config">🍭ub-spfx-git-Config</h4>
+This script is used to configure git (username;useremail).</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-spfx-git-Config -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-spfx-gulp-trustdevcert">🍭ub-spfx-gulp-TrustDevCert</h4>
+This script is will install the SharePoint Framework Development Certificate.</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-spfx-gulp-TrustDevCert -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-spfx-gulp-yo-mgen-fs">🍭ub-spfx-gulp-Yo-Mgen-Fs</h4>
+This script is used to install gulp-cli yo @microsoft/generator-sharepoint spfx-fast-serve.</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-spfx-gulp-Yo-Mgen-Fs -Instance myinstance
+</code></pre>
+<h3 id="system">System</h3>
+<ul>
+<li><h4 id="ub-sys-wsl-initialize">🍭ub-sys-wsl-Initialize</h4>
+Initializes a ubuntu environment</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-sys-wsl-Initialize -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-sys-wsl-sshkeygenerate">🍭ub-sys-wsl-SSHKeyGenerate</h4>
+This script is a bash shell script that will create an SSH key in WSL and will update your windows host with the same key</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-sys-wsl-SSHKeyGenerate -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-sys-wsl-superuser">🍭ub-sys-wsl-SuperUser</h4>
+This script is a bash shell script that sets the default user for a WSL instance</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-sys-wsl-SuperUser -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-sys-wsl-updates">🍭ub-sys-wsl-Updates</h4>
+This script is a bash shell script that updates the current Linux distribution packages</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-sys-wsl-Updates -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-sys-wsl-utils">🍭ub-sys-wsl-Utils</h4>
+This script is a bash shell script that installs WSL <a href="https://github.com/wslutilities/wslu">utilities</a></li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-sys-wsl-Utils -Instance myinstance
+</code></pre>
+<h3 id="myscripts">MyScripts</h3>
+<ul>
+<li><h4 id="ub-myscripts-eggxample1">🍭ub-myscripts-eggxample1</h4>
+<p>Installs  gedit linux app</p>
+<p>Eggxample1 is a script that installs a linux app (gedit)<br>
+After execution take a peek at your Windows Start Menu, you should see a new entry for the app.</p>
+<p>Purpose : show how to install a package and how to run linux apps in windows.</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-myscripts-eggxample1 -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-myscripts-eggxample2">🍭ub-myscripts-eggxample2</h4>
+<p>Eggxample2 is a script that runs a RickRool PowerShell script.</p>
+<p>Eggxample2 is a script that runs a PowerShell script that calls a windows process and plays a rickroll.</p>
+<p>Purpose : show how to run a process in windows within wsl.</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-myscripts-eggxample2 -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-myscripts-myfirstscript">🍭ub-myscripts-MyFirstScript</h4>
+<p>Installs linux x11 apps and shows a clock and a calc</p>
+<p>Eggxample1 is a script that installs X11 apps (linux), shows a linux clock and a linux calc.
+Purpose is to show how to install a package and running appsin linux.</p>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-myscripts-MyFirstScript -Instance myinstance
+</code></pre>
+<p><br>
+<strong>Important Note:</strong>
+Updating\Importing the Pnp WSL2 module will <strong>not remove any existing assets</strong>.
+However out of the box <a href="/candy/index.html">Candy</a> assets will be updated ( the system will detect the changes and will prompt you). Candy under the <a href="/candy/index.html#myscripts">MyScripts</a> will <strong>not</strong> be overwritten.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ScoutmanPt/test/blob/main/pages/candy/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+
+      <a href="https://www.scoutman.pt"><img src="../images/scoutmanpt.png" width="25px" style="margin:2px 8px 6px 1px"></a><span>Generated by <strong>DocFX</strong></span>
+
+          </div>
+        </div>
+      <script type="text/javascript" src="../styles/main.js"></script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7R3DFBRCTX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7R3DFBRCTX');
+      </script>
+      <script type="text/javascript">
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "l4r7k3f6hi");
+      </script>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

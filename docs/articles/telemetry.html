@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Disable or Enable telemetry | PnP.Wsl2 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Disable or Enable telemetry | PnP.Wsl2 ">
+    
+    
+      <link rel="shortcut icon" href="../https://c.s-microsoft.com/favicon.ico?v2">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="PnP.Wsl2">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="disable-or-enable-telemetry">Disable or Enable telemetry</h1>
+
+<p><br>
+By default PnP Wsl2 will report its usage anonymously.</p>
+<p>Information about the <strong>version of PnP Wsl</strong>, the <strong>operation system version</strong> and the <strong>cmdlet</strong> executed is the only information collected.</p>
+<p>Notice that telemetry will <em>not</em> include parameters used and will <em>not</em> include any values of parameters.</p>
+<p>Telemetry will also <em>not</em> be able to trace the execution back to the specific tenant it ran on, the organization it was used for or the person it was run by.</p>
+<p>Having telemetry in place allows to get insight in the usage of cmdlets and thereby prioritize work towards the most popular cmdlets.</p>
+<p>To query if in a connected PnP Wsl2 session the telemetry is enabled, use <a href="../cmdlets/Get-PnPWsl2Telemetry.html">Get-PnPWsl2Telemetry</a>.</p>
+<h2 id="enable-telemetry">Enable Telemetry</h2>
+<p>You can enable telemetry to be sent by using <a href="../cmdlets/Enable-PnPWsl2Telemetry.html">Enable-PnPWsl2Telemetry</a></p>
+<h2 id="disable-telemetry">Disable Telemetry</h2>
+<p>You can disable telemetry to be sent by using <a href="../cmdlets/Disable-PnPWsl2Telemetry.html">Disable-PnPWsl2Telemetry</a></p>
+<h2 id="enablingdisabling-telemetry-by-using-an-environment-variable">Enabling\Disabling Telemetry by using an environment variable</h2>
+<p>To disable telemetry, set the PNPWSL2_DISABLETELEMETRY environment variable to true, i.e. by using $env:PNPWSL2_DISABLETELEMETRY=$true.</p>
+<p>Remove the entry again or set it to false to enable telemetry to be sent again.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ScoutmanPt/test/blob/main/pages/articles/telemetry.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+
+      <a href="https://www.scoutman.pt"><img src="../images/scoutmanpt.png" width="25px" style="margin:2px 8px 6px 1px"></a><span>Generated by <strong>DocFX</strong></span>
+
+          </div>
+        </div>
+      <script type="text/javascript" src="../styles/main.js"></script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7R3DFBRCTX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7R3DFBRCTX');
+      </script>
+      <script type="text/javascript">
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "l4r7k3f6hi");
+      </script>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

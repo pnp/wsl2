@@ -1,0 +1,18 @@
+﻿- name: About
+  href: about.md
+- name: Why Wsl?
+  href: whywsl.md
+- name: PnP WSL2 Overview
+  href: overview.md
+- name: Installation
+  href: installation.md
+- name: CheckPoints
+  href: checkpoints.md
+- name: Telemetry
+  href: telemetry.md
+- name: Candy
+  href: ../candy/index.md  
+- name: SharePoint Framework
+  href: spfx.md
+- name: ML Development Env
+  href: mlworkflows.md

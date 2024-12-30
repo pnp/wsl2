@@ -1,0 +1,13 @@
+﻿---
+Module Name: PnP.Wsl2
+title: %%cmdletname%%
+schema: 2.0.0
+applicable: WSL
+external help file: PnP.Wsl2.dll-Help.xml
+online version: https://scoutmanpt.github.io/pnpwsl2/cmdlets/%%cmdletname%%.html
+---
+ 
+# %%cmdletname%%
+
+
+

@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+:root {
+  --bs-font-sans-serif: 'Roboto';
+  --bs-border-radius: 0px;
+
+  --border-radius-button: 0px;
+  --card-box-shadow: 0 1px 2px 0 #3d41440f, 0 1px 3px 1px #3d414429;
+
+  --material-yellow-light: #e6dfbf;
+  --material-yellow-dark: #5a5338;
+
+  --material-blue-light: #c4d9f1;
+  --material-blue-dark: #383e5a;
+
+  --material-red-light: #f1c4c4;
+  --material-red-dark: #5a3838;
+
+  --material-warning-header: #f57f171a;
+  --material-warning-background: #f6e8bd;
+  --material-warning-background-dark: #57502c;
+
+  --material-info-header: #b168851a;
+  --material-info-background: #e3f2fd;
+  --material-info-background-dark: #2c4557;
+
+  --material-danger-header: #d32f2f1a;
+  --material-danger-background: #ffebee;
+  --material-danger-background-dark: #572c2c;
+}
+
+/* HEADINGS */
+
+h1 {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.8;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+h5 {
+  font-size: 14px;
+  padding: 10px 0px;
+}
+
+article h2,
+article h3,
+article h4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+article h4 {
+  padding-bottom: 8px;
+  /* border-bottom: 2px solid #ddd; */
+}
+
+/** IMAGES **/
+img {
+  border-radius: var(--bs-border-radius);
+  box-shadow: var(--card-box-shadow);
+}
+
+/** NAVBAR **/
+.navbar-brand > img {
+  box-shadow: none;
+  color: var(--bs-nav-link-color);
+}
+
+[data-bs-theme='light'] nav.navbar {
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+[data-bs-theme='dark'] nav.navbar {
+  background-color: var(--bs-tertiary-bg);
+}
+
+.navbar-nav > li > a {
+  border-radius: var(--border-radius-button);
+  transition: 200ms;
+  padding: 6px;
+  padding-top: 10px;
+  margin-left: 16px;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+
+.navbar-nav a.nav-link:focus,
+.navbar-nav a.nav-link:hover {
+  background-color: var(--bs-primary-border-subtle);
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: var(--bs-link-hover-color);
+}
+
+/** SEARCH AND FILTER **/
+input.form-control {
+  border-radius: var(--border-radius-button);
+}
+
+form.filter {
+  margin: 0.3rem;
+}
+
+/** ALERTS **/
+.alert {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  margin-top: 50px;
+}
+
+.alert > p {
+  padding: 0.2rem 0.7rem 0.7rem 1rem;
+}
+
+.alert > ul {
+  margin-bottom: 0;
+  padding: 5px 40px;
+}
+
+.alert > h5 {
+  padding: 0.5rem 0.7rem 0.7rem 1rem;
+  border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.alert-info {
+  color: var(--material-blue-dark);
+  background-color: var(--material-info-background);
+}
+
+[data-bs-theme='dark'] .alert-info {
+  color: var(--material-blue-light);
+  background-color: var(--material-info-background-dark);
+}
+
+.alert-info > h5 {
+  background-color: var(--material-info-header);
+}
+
+.alert-warning {
+  color: var(--material-yellow-dark);
+  background-color: var(--material-warning-background);
+}
+
+[data-bs-theme='dark'] .alert-warning {
+  color: var(--material-yellow-light);
+  background-color: var(--material-warning-background-dark);
+}
+
+.alert-warning > h5 {
+  background-color: var(--material-warning-header);
+}
+
+.alert-danger {
+  color: var(--material-red-dark);
+  background-color: var(--material-danger-background);
+}
+
+[data-bs-theme='dark'] .alert-danger {
+  color: var(--material-red-light);
+  background-color: var(--material-danger-background-dark);
+}
+
+.alert-danger > h5 {
+  background-color: var(--material-danger-header);
+}
+
+/* CODE HIGHLIGHT */
+code {
+  border-radius: var(--bs-border-radius);
+  margin: 4px 2px;
+  box-shadow: none;
+}
+#autocollapse .navbar-brand {
+  margin-top: 10px;
+}
+.navbar .navbar-nav {
+  padding-top: 7px;
+}
+.navbar-inverse {
+  background-color: #2E7FBE;
+  border-color:#2E7FBE;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+  color: #fff;
+  background-color: #2E7FBE;
+  border-bottom: #FFFFFF 3px solid;
+}
+.navbar-inverse .navbar-toggle {
+  border-color: #2E7FBE;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: #2E7FBE;
+  -webkit-box-shadow: none;
+}
+.navbar-inverse .navbar-nav>li>a {
+   color: #FFFFFF; 
+}
+
+.toc .level1 > li {
+  font-weight: normal;
+}
+.hljs-attr, .hljs-built_in,.hljs-attribute, .hljs-literal, .hljs-meta, .hljs-number, .hljs-operator, 
+.hljs-selector-attr, .hljs-selector-class, .hljs-selector-id, .hljs-variable,.hljs-keyword, .hljs-string,.hljs-symbol
+{
+  color: #000000;
+  
+}
+.code-header {
+  box-sizing: content-box;
+  background-color: #f2f2f2;
+  color: #171717;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #e3e3e3;
+  border-bottom: 0;
+  margin-top: 16px;  
+  max-height: 30px;
+}
+.code-header > .language {
+  padding: 2px 16px;
+  flex-grow: 1;
+  line-height: 26px;
+  max-height: 30px;
+}
+.code-header button {
+  border: 0px;
+}
+.code-header > .action .successful-copy-alert.is-transparent {
+  opacity: 0;
+  transition: 500ms opacity ease-in-out;
+
+}
+.code-header > .action .successful-copy-alert {
+  justify-content: center;
+  align-items: center;
+  top: -22px;
+  position: relative;
+  display: flex;
+  color: #128712;
+  background-color: white;
+
+  outline-color: #fff;
+  color: #fff;
+}
+pre {
+  border: 1px solid #e3e3e3;
+  border-radius: 0px;
+  background-color: none;
+}
+.footer {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+.footer a {
+  color: var(--footer-text-color);
+  /* text-decoration: underline; */
+}
+
+.affix h5 {
+  /* font-weight: bold; */
+  display: none;
+}
+
+header .navbar {
+  border-color:#e3e3e3;
+  border-width: 0 0 2px;
+  border-radius: 0;
+}
+.pagination>.active>a {
+  background-color:#2E7FBE;
+  border-color: #2E7FBE;
+}
+.pagination>li>a {
+  color: #2E7FBE;
+}
+.sidefilter {
+  background-color: #ffffff;
+}
+body .toc {
+  background-color: #ffffff;
+}
+.sidetoc {
+  background-color: #ffffff;
+}
+.navbar-default {
+  background-color: #ffffff;
+}

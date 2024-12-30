@@ -1,0 +1,6 @@
+# PnP Wsl2 cmdlets
+
+PnP Wsl2 out of 19 cmdlets which can help you in setting up, configuring, maintaining and using various WSL instances.
+Each of the cmdlets is documented to aid in learning how to use it.
+
+%%cmdletlisting%%
