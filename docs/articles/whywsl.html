@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Why should we use WSL ? | PnP.Wsl2 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Why should we use WSL ? | PnP.Wsl2 ">
+    
+    
+      <link rel="shortcut icon" href="../https://c.s-microsoft.com/favicon.ico?v2">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="PnP.Wsl2">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="why-should-we-use-wsl-">Why should we use WSL ?</h1>
+
+<p><br>
+Windows Subsystem for Linux (WSL) is a feature in Windows that allows us to run a Linux distribution directly on a Windows machine, without the need for virtual machines or dual-boot setups.</p>
+<p>As a developer, IT professionals, or DevOps practitioners, there are several reasons why we find WSL beneficial for our workflows since it offers a lot of benefits in terms of file system, compile tools, and usage speed, especially when compared to native Windows environments.</p>
+<h2 id="reasons-to-use-wsl">Reasons to Use WSL</h2>
+<p>Here are some reasons why we must consider using WSL within our development or IT workflows</p>
+<h3 id="-file-system-performance">📂 File System Performance</h3>
+<p>One of the significant advantages of WSL is its integration of a Linux file system on top of the Windows file system.<br>
+This allows for better file I/O performance, as Linux file systems are generally optimized for the kind of workloads encountered in development and server environments.</p>
+<p>Linux file systems tend to handle a large number of small files and symbolic links more efficiently, which is beneficial for projects with many dependencies or intricate directory structures. Doing a lot of file I/O operations, such as reading and writing files, is faster in WSL compared to native Windows.</p>
+<p>Are you developing a Node-based solution? You will notice a significant improvement in the time it takes to build and bundle your solution.</p>
+<h3 id="-compile-tools-and-usage-speed">🛠️ Compile Tools and Usage Speed</h3>
+<p>WSL provides a native Linux environment, allowing us to use Linux-based compile tools directly on our Windows machine. This leads to faster compilation times compared to running these tools in a native Windows environment. The Linux environment in WSL is lightweight and performs well, enabling a smoother development experience, particularly for projects that leverage Linux-centric toolchains.</p>
+<h3 id="-nodejs-and-frontend-development">🧊 Node.js and Frontend Development</h3>
+<p>WSL allows us to run Node.js and other frontend development tools natively in a Linux environment. This can help avoid compatibility issues and streamline development workflow.
+Frontend development often involves using command-line tools and building systems that are more native to Linux. WSL facilitates the seamless integration and execution of these tools.</p>
+<h3 id="-sharepoint-development">🦔 SharePoint Development</h3>
+<p>SharePoint development often involves a mix of technologies, including .NET and various scripting languages.<br>
+With WSL, we can leverage the strengths of both Windows and Linux environments, ensuring compatibility and ease of use
+for a broader range of tools and frameworks.</p>
+<h3 id="-python-development">🐍 Python Development</h3>
+<p>WSL provides a convenient environment for Python development, offering compatibility with Linux-specific Python libraries and tools.
+With the ability to seamlessly switch between Windows and Linux environments, we can choose the best-suited tools for our Python development tasks.</p>
+<h3 id="powershell-and-cli-tools">📃PowerShell and CLI Tools</h3>
+<p>WSL does not replace PowerShell; instead, it complements it.<br>
+We can still use PowerShell for Windows-centric tasks, and with WSL, we now have the flexibility to use Linux command-line tools for tasks where they are more suited. This dual-environment capability is valuable for IT professionals and DevOps practitioners who often work with a diverse set of tools and technologies.</p>
+<h3 id="-devops-and-automation">♾️ DevOps and Automation</h3>
+<p>WSL is well-suited for DevOps and automation tasks, providing a consistent environment for running scripts and tools across different platforms.
+Whether we are working with configuration management tools, containerization, or CI/CD pipelines, WSL can help streamline our DevOps workflows.</p>
+<h3 id="-cloud-development">☁️ Cloud Development</h3>
+<p>WSL is well-suited for cloud development, providing a consistent environment for working with cloud platforms and services.
+Whether we are developing cloud-native applications, managing cloud infrastructure, or working with cloud-based tools, WSL can help ensure a seamless development experience.</p>
+<h3 id="-machine-learning-and-data-science">🏫 Machine Learning and Data Science</h3>
+<p>WSL provides a convenient environment for machine learning and data science tasks, offering compatibility with Linux-specific libraries and tools.
+With WSL, we can leverage the strengths of both Windows and Linux environments, ensuring compatibility and ease of use for a broader range of machine learning and data science tools.</p>
+<p>WSL offers a wide range of benefits for developers, IT professionals, and DevOps practitioners, providing a seamless and efficient way to work with Linux-based tools and technologies on Windows. Whether we are developing applications, managing infrastructure, or working with cloud platforms, WSL can help streamline the workflows and ensure a consistent and productive development experience.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ScoutmanPt/test/blob/main/pages/articles/whywsl.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+
+      <a href="https://www.scoutman.pt"><img src="../images/scoutmanpt.png" width="25px" style="margin:2px 8px 6px 1px"></a><span>Generated by <strong>DocFX</strong></span>
+
+          </div>
+        </div>
+      <script type="text/javascript" src="../styles/main.js"></script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7R3DFBRCTX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7R3DFBRCTX');
+      </script>
+      <script type="text/javascript">
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "l4r7k3f6hi");
+      </script>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

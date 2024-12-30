@@ -1,0 +1,508 @@
+{
+  "source_base_path": "C:/work/code/github/pnp/test/pages",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/about.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/about.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/checkpoints.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/checkpoints.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/mlworkflows.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/mlworkflows.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/overview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/spfx.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/spfx.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/telemetry.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/telemetry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/whywsl.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/whywsl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "candy/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "candy/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Add-PnPWsl2Candy.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Add-PnPWsl2Candy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Add-PnPWsl2Instance.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Add-PnPWsl2Instance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/CheckPoint-PnPWsl2Instance.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/CheckPoint-PnPWsl2Instance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Copy-PnPWsl2Instance.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Copy-PnPWsl2Instance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Disable-PnPWsl2.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Disable-PnPWsl2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Disable-PnPWsl2Telemetry.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Disable-PnPWsl2Telemetry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Enable-PnPWsl2.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Enable-PnPWsl2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Enable-PnPWsl2Telemetry.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Enable-PnPWsl2Telemetry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Export-PnPWsl2Instance.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Export-PnPWsl2Instance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2Candie.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2Candie.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2Candy.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2Candy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2CheckPoint.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2CheckPoint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2Configuration.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2Distribution.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2Distribution.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2Distributions.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2Distributions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2Help.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2Help.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2Instance.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2Instance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2Instances.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2Instances.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Get-PnPWsl2Telemetry.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Get-PnPWsl2Telemetry.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Import-PnPWsl2Instance.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Import-PnPWsl2Instance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Invoke-PnPWsl2Script.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Invoke-PnPWsl2Script.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Remove-PnPWsl2Instance.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Remove-PnPWsl2Instance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Restore-PnPWsl2Instance.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Restore-PnPWsl2Instance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Start-PnPWsl2.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Start-PnPWsl2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Stop-PnPWsl2.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Stop-PnPWsl2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/Stop-PnPWsl2Instance.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/Stop-PnPWsl2Instance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "cmdlets/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "cmdlets/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "cmdlets/toc.html"
+        },
+        ".json": {
+          "relative_path": "cmdlets/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Add-PnPWsl2Instance.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Add-PnPWsl2Instance.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Add-PnPWsl2Tools.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/Add-PnPWsl2Tools.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Get-PnPWsl2Help.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/Get-PnPWsl2Help.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Get-PnPWsl2Tools.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/Get-PnPWsl2Tools.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/main-screen.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/main-screen.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/scoutmanpt.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/scoutmanpt.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

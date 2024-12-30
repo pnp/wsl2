@@ -1,0 +1,54 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      },
+      {
+        "files": [
+        "articles/**.md",
+        "articles/**/toc.yml",
+        "toc.yml",
+        "*.md"
+        ]
+        },
+        {
+        "files": [
+        "cmdlets/**.md",
+        "cmdlets/**/toc.yml",
+        "toc.yml",
+        "*.md"
+        ]
+        },
+        {
+          "files": [
+          "candy/index.md"
+          ]
+          }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": ["default","material/material"],
+    "globalMetadata": {
+      "_appName": "PnP.Wsl2",
+      "_appTitle": "PnP.Wsl2",
+      "_appLogoPath": "images/logo.svg",
+      "_enableSearch": true,
+      "_disableToc": false,
+      "_disableBreadcrumb": false,
+      "_appFaviconPath": "https://c.s-microsoft.com/favicon.ico?v2",
+      "pdf": false
+    }
+  }
+}

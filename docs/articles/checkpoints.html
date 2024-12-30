@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>CheckPoints | PnP.Wsl2 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="CheckPoints | PnP.Wsl2 ">
+    
+    
+      <link rel="shortcut icon" href="../https://c.s-microsoft.com/favicon.ico?v2">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="PnP.Wsl2">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="checkpoints">CheckPoints</h1>
+
+<p><br>
+PnP WSL2 checkpoints is a feature that allow us to capture the state of the WSL Instance at a particular point in time.
+This captured state includes the current WSL instance content, and it is saved as an export .vhdx file under the WSL  instance folder.</p>
+<p>Whenever a checkpoint is created, a timestamped vhdx file is created in the WSL instance folder. This  file can be used to restore the WSL instance to the state it was in when the checkpoint was created.</p>
+<p>Checkpoints can be used for creating backups of WSL linux system, testing software, scripts, and reverting a WSL Instance to a previous state if needed.</p>
+<p>When you add a new WSL instance, the module will automatically create a checkpoint for you making this is a good practice to have a clean state of the WSL instance.</p>
+<h2 id="available-cmdlets-to-manage-checkpoints">Available cmdlets to manage CheckPoints</h2>
+<ul>
+<li><a href="/cmdlets/CheckPoint-PnPWsl2Instance.html">CheckPoint-PnPWsl2Instance</a> : creates a new checkpoint of a WSL2 instance.</li>
+<li><a href="/cmdlets/Get-PnPWsl2CheckPoint.html">Get-PnPWsl2CheckPoint</a> : retrieves a list of checkpoints of a WSL2 instance.</li>
+<li><a href="/cmdlets/Restore-PnPWsl2Instance.html">Restore-PnPWsl2Instance</a> restores a PnP WSL2 instance from a checkpoint.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Keep in mind that the checkpoints are stored in the WSL instance folder (under checkpoints folder)</p>
+<p>If you <strong>remove</strong> the WSL instance with <a href="/cmdlets/Remove-PnPWsl2Instance.html">Remove-PnPWsl2Instance</a>, the <strong>checkpoints will not be deleted</strong>.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ScoutmanPt/test/blob/main/pages/articles/checkpoints.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container-fluid">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+
+      <a href="https://www.scoutman.pt"><img src="../images/scoutmanpt.png" width="25px" style="margin:2px 8px 6px 1px"></a><span>Generated by <strong>DocFX</strong></span>
+
+          </div>
+        </div>
+      <script type="text/javascript" src="../styles/main.js"></script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7R3DFBRCTX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7R3DFBRCTX');
+      </script>
+      <script type="text/javascript">
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "l4r7k3f6hi");
+      </script>
+
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
