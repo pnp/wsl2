@@ -155,9 +155,14 @@ function Send-TrackEventTelemetry
 		$headers = @{
 			'Content-Type' = 'application/x-json-stream';
 		};
-
-		# send the request
-	    Invoke-RestMethod -Uri $AppInsightsIngestionEndpoint -Method Post -Headers $headers -Body $bodyAsCompressedJson 
+		try {
+			# send the request
+			Invoke-RestMethod -Uri $AppInsightsIngestionEndpoint -Method Post -Headers $headers -Body $bodyAsCompressedJson 
+		}
+		catch {
+			<#Do this if a terminating exception happens#>
+		}
+		
 		
     }
     End{

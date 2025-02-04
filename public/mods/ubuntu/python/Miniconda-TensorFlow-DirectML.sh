@@ -45,14 +45,14 @@ bash Miniconda3-latest-Linux-x86_64.sh -u -b
 conda_init=$(cat << 'EOF'
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/s/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('~/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/s/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/s/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "~/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "~/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/s/miniconda3/bin:$PATH"
+        export PATH="~/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -64,6 +64,7 @@ conda config --set auto_activate_base true
 # source ~/.bashrc	
 echo-print " Creating DirectML python environment ...\n"
 conda create --name directml python=3.6 
+eval "$(conda shell.bash hook)"
 conda activate directml
 echo-print " Installing Tensorflow + DirectML ...\n"
 pip install tensorflow-directml

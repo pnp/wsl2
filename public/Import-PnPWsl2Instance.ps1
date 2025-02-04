@@ -58,6 +58,14 @@ function Import-PnPWsl2Instance {
 
         $importFile = $InstanceFile
         if ($Instance -ne '<NEW INSTANCE>') {
+            Write-Log "`n  In-place Import.`n  Keep in mind that the existing instance will be removed and a new one will be created (with the same name) based on the export file"
+            $msg=" [[green[[[/ [[[yellowc[/] [[brwhitecontinue /[[[yellowQ[/] [[brwhiteto exit[[green ]][/`n"
+            $out = Show-ConfirmPrompt -msg $msg -yesKey "c" -quitKey "q"
+            if (-Not $out) {
+                Write-Log " Exiting ..."
+                $env:LogScope =""
+                return
+            }
             Remove-PnPWsl2Instance -Instance $Instance -Force
             $importInstance = $Instance.ToString()
         }
@@ -89,8 +97,12 @@ function Import-PnPWsl2Instance {
 
         New-Item -Path "$instancesFolder\$importInstance" -ItemType Directory -Force | Out-Null
         $cmd = $config.Commands.'Import-WslInstance'
+           ## test if importfile is a tar file if not its a vhd file
+           if ($importFile -match ".vhd") {
+            $importFile = $importFile + " --vhd"
+        }
         Invoke-Expression ( $cmd -f $importInstance , "$instancesFolder\$importInstance", $importFile )
-
+     
         Write-Log "[[green$importInstance[/ Instance imported!`n" # Log a success message after importing the Instance
         $env:LogScope = ""
     }

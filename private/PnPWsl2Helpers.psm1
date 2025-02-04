@@ -1,8 +1,9 @@
 ﻿using namespace System.Management.Automation
 using module ./PSColors.psm1
 using module ./PSScreens.psm1
-. $PSScriptRoot/Send-PnPWsl2TrackEventTelemetry.ps1
+Set-StrictMode -Version 3.0
 
+. $PSScriptRoot/Send-PnPWsl2TrackEventTelemetry.ps1
 $ENV:PNPWSL2_CONFIG_FILE = "PnP.Wsl2.Json"
 $ENV:PNPWSL2_SCREEN_MAIN = "$PSScriptRoot\assets\screens\splscr-main.ascii"
 $ENV:PNPWSL2_SCREEN_SMALL = "$PSScriptRoot\assets\screens\splscr-small.ascii"
@@ -128,12 +129,12 @@ function Get-WSl2Distributions($online, $instanceName) {
     if ($null -ne $instanceName -and $instanceName.Length -gt 0) {
         $strings = $strings | Where-Object { $_ -eq $instanceName }
     }
-    $strings = $strings | Where-Object { $_ -ne "Distributions" -and $_ -notlike "https://*" }
+    $strings = @($strings | Where-Object { $_ -ne "Distributions" -and $_ -notlike "https://*" })
     # Output
     if ($strings.Count -eq 0) {
         return $null
     }
-    $ht= $strings | Sort-Object | ForEach-Object {  [PSCustomObject]@{ Name = $_;  }  }
+    $ht = $strings | Sort-Object | ForEach-Object { [PSCustomObject]@{ Name = $_; } }
     $ht
 }
 <#
@@ -173,7 +174,6 @@ function Get-WindowsFeature([string] $name) {
         Initializes the module configuration.
 #>
 function Initialize-ModuleConfiguration() {
-
     $label = ""
     if (-Not(Test-Path -Path $ENV:PnPWsl2_FileInstance )) {
         do {
@@ -207,12 +207,11 @@ function Initialize-ModuleConfiguration() {
         $ErrorActionPreference = "Stop"
         $RootFolder | Set-Content -Path  $ENV:PnPWsl2_FileInstance -NoNewline
     }
-    $RootFolder = Get-Content -Path  $ENV:PnPWsl2_FileInstance -Raw
-
+    $RootFolder = Get-Content -Path  $ENV:PnPWsl2_FileInstance -Raw    
     New-Item -Path "$RootFolder\PnPWsl2\mods" -ItemType Directory -Force -ErrorAction SilentlyContinue
-
-    [PSScreens]::ShowMainScreen($label)
-
+    $version = (Import-PowerShellDataFile $PSScriptRoot\..\PnP.Wsl2.psd1).ModuleVersion
+    
+    [PSScreens]::ShowMainScreen($label,$version)
 
     $localConfigFile = "$RootFolder\PnPWsl2\$($ENV:PNPWSL2_CONFIG_FILE)"
 
@@ -221,10 +220,11 @@ function Initialize-ModuleConfiguration() {
     $oriConfigFile = "$PSScriptRoot\..\$($ENV:PNPWSL2_CONFIG_FILE)"
     $env:WriteToFilePath = "$RootFolder\PnPWsl2\logs\PnPWsl2_{0}.log" -f $((Get-Date).ToString("yyyyMMddhh"))
     New-Item -Path "$RootFolder\PnPWsl2\logs" -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null
+    if (-Not(Test-Path -Path $localConfigFile)) {
     
-    # if (-Not(Test-Path -Path $localConfigFile)) {
         Copy-Item -Path $oriConfigFile -Destination $localConfigFile
-    # }
+        
+    }
     #validate if .sh scripts were modified
     $myScriptsFolder = "*\myscripts\*"
     $option = Invoke-ModFilesBackup -folderOrigin "$PSScriptRoot\..\public\mods" -folderDest "$RootFolder\PnPWsl2\mods" `
@@ -238,15 +238,13 @@ function Initialize-ModuleConfiguration() {
     }
     ## Kill pending processes
     Stop-PendingProcesses
-    #copy mods to local folder
+    # copy mods to local folder
     # this actually changes the file encoding in destination folder so no good!
-    #Copy-Item -Path "$PSScriptRoot\..\public\mods" -Destination "$RootFolder\PnPWsl2" -Recurse  -ErrorAction SilentlyContinue
     # Copy Files is a copycat of the copy-item function that preserves the file encoding
-    Copy-Files -source "$PSScriptRoot\..\public\mods" -dest "$RootFolder\PnPWsl2\mods" -dontCopyFolder  $myScriptsFolder 
+
+    Copy-Files -source "$PSScriptRoot\..\public\mods" -destination "$RootFolder\PnPWsl2\mods" -dontCopyFolder  $myScriptsFolder 
+   
     ## get all files in "$RootFolder\PnPWsl2\mods" and create bash aliases in ~/.bashrc
-
-
-
     ##adjust configuration
     $ENV:PNPWSL2_CONFIG_FILE = $localConfigFile
     $config = Get-ModuleConfiguration
@@ -256,11 +254,15 @@ function Initialize-ModuleConfiguration() {
 
     $config.WslTempFolder = (Get-Item $env:TEMP).FullName
     $config.PnPWsl2RootFolder = "$RootFolder\PnPWsl2"
+    # $imagesFolder =$null
+    # if ($null -ne $config.WslTempFolder) { 
+    #     $imagesFolder = $config.WslTempFolder 
+    #     $instancesFolder = "$imagesFolder\..\instances" 
+    #     New-Item -Path $imagesFolder -ItemType Directory -Force | Out-Null
+    #     New-Item -Path $instancesFolder -ItemType Directory -Force | Out-Null
+    # }
 
-    if ($null -eq $imagesFolder) { $imagesFolder = $config.WslTempFolder }
-    if ($null -eq $instancesFolder ) { $instancesFolder = "$imagesFolder\..\instances" }
-    New-Item -Path $imagesFolder -ItemType Directory -Force | Out-Null
-    New-Item -Path $instancesFolder -ItemType Directory -Force | Out-Null
+
     Save-ModuleConfiguration -configFileObj $config
     # }
     $config = Get-ModuleConfiguration
@@ -381,7 +383,8 @@ function Write-Log {
     if ($ProcessID) {
         $processIDLabel = "[" + $ProcessID + "]"
     }
-    if ((-Not $logHasDate) -and ($env:LogHasDate)) {
+    $logHasDate = $false
+    if ($env:LogHasDate) {
         $logHasDate = $true
     }
     if ($Scope.length -gt 0) {
@@ -434,16 +437,16 @@ function Write-Log {
     It uses the -replace operator to replace carriage return characters.
     It uses the Set-Content cmdlet to write the modified content back to the file.
 #>
-function Set-UnixFileContent($file) {
-    $fileContent = Get-Content -Path $file  -Raw
+function Set-UnixFileContent([string]$filePath) {
+    $fileContent = Get-Content -Path $filePath  -Raw
     $modifiedContent = $fileContent -replace '\r', ''
-    Set-Content -Path $file -Value $modifiedContent -Encoding utf8NoBOM -NoNewline
+    Set-Content -Path $filePath -Value $modifiedContent -Encoding utf8NoBOM -NoNewline
 }
 # This function is used to kill any pending processes
 function Stop-PendingProcesses() {
     # Define the processes to be killed
     #MicrosoftWebDriver.exe <- use in mod\az\SSHKeyAdd.sh
-    $pendingProcesses= "MicrosoftWebDriver".split(",")
+    $pendingProcesses = "MicrosoftWebDriver".split(",")
     # Loop through each process
     foreach ($processName in $pendingProcesses) {
         # Get the process by its name
@@ -463,15 +466,135 @@ function Stop-PendingProcesses() {
     This function copies files from a source directory to a destination directory, recursivly.
     Why this function right? Apparantely Copy-Item with -Recurse doesn preserve the file encoding
 #>
-function Copy-Files($source, $dest,$dontCopyFolder) {
+function Copy-Files {
+    param (
+        [string]$source,
+        [string]$destination,
+        [string]$dontCopyFolder
+    )
+
+    # Ensure source and destination paths are resolved
+    $sourcePath = (Resolve-Path -Path $source).Path
+    $destinationPath = (Resolve-Path -Path $destination).Path
+
+    # Ensure destination directory exists
+    if (-not (Test-Path -Path $destinationPath)) {
+        New-Item -ItemType Directory -Path $destinationPath -Force | Out-Null
+    }
+
+    # Get all files from source directory
+    $files = Get-ChildItem -Path $sourcePath -File -Recurse
+
+    foreach ($file in $files) {
+        # Determine the destination file path
+        $relativePath = $file.FullName.Substring($sourcePath.Length)
+        $destFilePath = Join-Path -Path $destinationPath -ChildPath $relativePath
+
+        # Ensure the destination directory exists
+        $destDir = Split-Path -Path $destFilePath -Parent
+        if (-not (Test-Path -Path $destDir)) {
+            New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+        }
+        try {
+            $theFile=$null;
+            if ($file.FullName -like $dontCopyFolder) {
+                ## test if file dest already exists [only copy if doesnt exists]
+                $myScriptsFile = $destFilePath
+                if (-not (Test-Path -Path $myScriptsFile)) {
+                    $theFile = Copy-Item -Path $file.FullName -Destination $destFilePath -Force -PassThru
+                }
+            }
+            else {
+                $theFile=Copy-Item -Path $file.FullName -Destination $destFilePath -Force -PassThru
+            }
+            # Copy the file
+           
+            if ($null -ne $theFile -and ($file.Extension -eq '.txt' -or $file.Extension -eq '.sh')) {
+                Set-UnixFileContent -FilePath $theFile.FullName
+            }
+        }   
+        catch {
+                $a=""
+        }
+        
+    }
+}
+# This function copies all files from the specified source directory to the destination directory. 
+# If the destination directory does not exist, it will be created. 
+# For each file copied, if the file is a text file (.txt) or a shell script (.sh), the function will call Set-UnixFileContent to process the file.
+function Copy-Files22($source, $dest, $dontCopyFolder) {
+    Copy-FolderRecursively -source $source -destination $dest
+    exit
+    $source = $source.ToLower()
+    $dest = $dest.ToLower()
+
+    # copy all files from $source $dest and on each file  if its a text file or sh call 
+    
+    # Ensure destination directory exists
+    if (-not (Test-Path -Path $dest)) {
+        New-Item -ItemType Directory -Path $dest
+    }
+
+    # Get all files from source directory
+    $files = Get-ChildItem -Path $source -File -Recurse
+    $theFile = $null
+    foreach ($file in $files) {
+        Write-Host " Copy-Files theFile10 "
+        Write-Host "     source = $($source) "
+        Write-Host "     destPath= $($dest)"
+        Write-Host "     FullName=$($file.Fullname)"
+
+       
+        $sourcePath = (Resolve-Path -Path $source).Path
+        Write-Host "     sourcePath = $($sourcePath) "
+        Write-Host " REPLACE=$($file.Fullname.replace($sourcePath, $dest))"
+        $tobe = $file.Fullname -replace ('(?i)' + $sourcePath), $dest
+        Write-Host " tobe=$tobe"
+        exit
+        $destPath = Split-Path -Path ( $tobe) -Parent 
+        Write-Host " Copy-Files theFile11 sourcePath = $($sourcePath) destPath= $($destPath)"
+        if ($file.FullName -like $dontCopyFolder) {
+            ## test if file dest already exists [only copy if doesnt exists]
+            $myScriptsFile = $destPath
+            if (-not (Test-Path -Path $myScriptsFile)) {
+                New-Item -Path $dest -ItemType Directory -Force | Out-Null
+                Write-Host " Copy-Files myScriptsFile"
+                $theFile = Copy-Item -Path $file.FullName -Destination $myScriptsFile -Force -PassThru
+            }
+        }
+        else {
+            <# Action when all if and elseif conditions are false #>
+            New-Item -Path $destPath -ItemType Directory -Force | Out-Null
+            Write-Host " Copy-Files theFile11"
+            $theFile = Copy-Item -Path $file.FullName -Destination $destPath -PassThru
+            exit
+        }
+        # Check if the file is a text file or a shell script
+        if ($null -ne $theFile -and ($file.Extension -eq '.txt' -or $file.Extension -eq '.sh')) {
+            Set-UnixFileContent -FilePath $theFile.FullName
+        }
+    }
+
+
+}
+function Copy-FilesOld($source, $dest, $dontCopyFolder) {
+ 
     $source = Resolve-Path -Path $source
     if (-Not(Test-Path -Path $dest)) {
         New-Item -Path $dest -ItemType Directory -Force | Out-Null
     }
     $destination = Resolve-Path -Path $dest
+    Write-Host "Copy0 item custom source=$source dest=$dest"
+
     $filesOrigin = (Get-ChildItem $source -Recurse -File)
-    foreach ($file in $filesOrigin) {
-        $fileDest = $file.FullName.Replace($source, $destination)
+       
+    foreach ($f in $filesOrigin) {
+        [System.IO.FileInfo] $file = $f;
+        Write-Host "Copy0112 /source:$($source.Path)"
+        Write-Host "Copy0112 /dest:$($destination.Path)" 
+        Write-Host "Copy0112 /file:$($file.FullName)"            
+        $fileDest = $file.FullName.Replace($source.Path, $destination.Path)
+        Write-Host "Copy0112 /fileDest:$fileDest"            
         $fileDest = $fileDest.Replace($file.Name, "")
         $fileDest = $fileDest.TrimEnd("\")
         if (-not (Test-Path -Path $fileDest)) {
@@ -482,15 +605,16 @@ function Copy-Files($source, $dest,$dontCopyFolder) {
         if ($file.Extension -eq ".sh" -or $file.Extension -eq ".txt") {
             Set-UnixFileContent -file $file.FullName
         }
-        if ( $file.FullName -like $dontCopyFolder)
-        {
+        if ($file.FullName -like $dontCopyFolder) {
             ## test if file dest already exists
-            $myScriptsFile="$($fileDest)\$($file.name)"
+            $myScriptsFile = "$($fileDest)\$($file.name)"
             if (-not (Test-Path -Path $myScriptsFile)) {
                 Copy-Item -Path $file.FullName -Destination $fileDest -Force
             }
         }
         else {
+            Write-Host "Copy0113"
+            Write-Host "Copy0113 - $($file.FullName) to $($fileDest)"
             Copy-Item -Path $file.FullName -Destination $fileDest -Force
         }
         
@@ -665,13 +789,13 @@ Performs a backup of modified files in the origin folder and provides options to
 .NOTES
 This function relies on the Get-FileHash cmdlet to calculate the MD5 hash of each file. It assumes that the function is being run with appropriate permissions to access and modify files in the specified folders.
 #>
-function Invoke-ModFilesBackup($folderOrigin, $folderDest,$dontWatchFolder) {
-    $folderOrigin = (Resolve-Path -Path $folderOrigin).Path
-    $folderDest = (Resolve-Path -Path $folderDest).Path
+function Invoke-ModFilesBackup($folderOrigin, $folderDest, $dontWatchFolder) {
+    $folderOrigin = (Resolve-Path -Path $folderOrigin).Path.ToLower()
+    $folderDest = (Resolve-Path -Path $folderDest).Path.ToLower()
 
     $filesOrigin = (Get-ChildItem  $folderOrigin -Recurse -File) | ForEach-Object {
         $hash = (Get-FileHash $_.FullName -Algorithm MD5).Hash
-        $_ | Select-Object @{Name = 'BaseName'; Expression = { $_.FullName.Replace($folderOrigin, "") } }, Length, `
+        $_ | Select-Object @{Name = 'BaseName'; Expression = { $_.FullName.toLower().Replace($folderOrigin, "") } }, Length, `
         @{Name = 'Hash'; Expression = { $hash } },
         FullName,
         Operation,
@@ -679,7 +803,7 @@ function Invoke-ModFilesBackup($folderOrigin, $folderDest,$dontWatchFolder) {
     }
     $filesDest = (Get-ChildItem  $folderDest -Recurse -File) | ForEach-Object {
         $hash = (Get-FileHash $_.FullName -Algorithm MD5).Hash
-        $_ | Select-Object @{Name = 'BaseName'; Expression = { $_.FullName.Replace($folderDest, "") } }, Length, `
+        $_ | Select-Object @{Name = 'BaseName'; Expression = { $_.FullName.toLower().Replace($folderDest, "") } }, Length, `
         @{Name = 'Hash'; Expression = { $hash } },
         FullName,
         Operation,
@@ -690,7 +814,7 @@ function Invoke-ModFilesBackup($folderOrigin, $folderDest,$dontWatchFolder) {
    
     foreach ($file in $filesOrigin) {
 
-        $fileDest = $filesDest | Where-Object { ($_.BaseName -notLike $dontWatchFolder) -and  ($_.BaseName -eq $file.BaseName) }
+        $fileDest = $filesDest | Where-Object { ($_.BaseName -notLike $dontWatchFolder) -and ($_.BaseName -eq $file.BaseName) }
         # Write-Host ("Ori:" + $file.FullName + "`nDet:" + $fileDest.FullName  + "`n")
         if ($null -eq $fileDest ) {
             # Write-Host "File not found in destination folder: $($file.FullName)"
@@ -702,7 +826,7 @@ function Invoke-ModFilesBackup($folderOrigin, $folderDest,$dontWatchFolder) {
         }
     }
     $files = @($filesDest | Where-Object { $_.Operation -eq "Changed" })
-
+    $p = $null
     if ($files.Count -gt 0) {
         [string]$msg = "[[cyan`nPnPWsl2[[brwhite is already installed, and apparently some files inside the mods folder are outdated\modified:`n`n "
         Write-Log -msg $msg
@@ -754,23 +878,21 @@ function Get-CandyBashAliases {
         [string]$folder
     )
 
-    $allAlias=@()
-    $allAlias+=" #### PNPWSL2 CANDY ALIAS STARTS HERE"
+    $allAlias = @()
+    $allAlias += " #### PNPWSL2 CANDY ALIAS STARTS HERE"
     # Get all files in the directory
-    $files = Get-ChildItem -Path $folder -Recurse -Filter "*.sh" -Exclude "core.sh","init.sh"
-     # For each file, create a bash alias
+    $files = Get-ChildItem -Path $folder -Recurse -Filter "*.sh" -Exclude "core.sh", "init.sh"
+    # For each file, create a bash alias
     foreach ($file in $files) {
-        # $file.directory.parent.name.Substring(0, 2)
-        # $file_.directory.name
         # Construct the alias command
-        $linuxPath= $file.FullName.replace("\","/")
-        $aliasName="pnpwsl2-{0}-{1}-{2}" -f $file.directory.parent.name.Substring(0, 2), `
-                                    $file.directory.name, `
-                                    [System.IO.Path]::GetFileNameWithoutExtension($file.Name) `
+        $linuxPath = $file.FullName.replace("\", "/")
+        $aliasName = "pnpwsl2-{0}-{1}-{2}" -f $file.directory.parent.name.Substring(0, 2), `
+            $file.directory.name, `
+            [System.IO.Path]::GetFileNameWithoutExtension($file.Name) `
 
-        $aliasCommand = "alias " + $aliasName + "='bash " + $linuxPath  + "'"
-        $allAlias+=$aliasCommand
+        $aliasCommand = "alias " + $aliasName + "='bash " + $linuxPath + "'"
+        $allAlias += $aliasCommand
     }
-    $allAlias+=" #### PNPWSL2 CANDY ALIAS ENDS HERE"
+    $allAlias += " #### PNPWSL2 CANDY ALIAS ENDS HERE"
     $allAlias
 }

@@ -1,11 +1,9 @@
 # PnP.Wsl2 PowerShell Module
 ![Image Alt text](public/img/main-screen.jpg)
 
-PnP WSL2 is a PowerShell Module providing cmdlets designed to simplify WSL instances management experience.  
+This is a PowerShell module for managing WSL2 instances.
 
-Originally developed by Rodrigo Pinto (@scoutmanpt), this project has since been integrated into the Microsoft 365 & Power Platform Community, also known as Patterns and Practices (PnP)
-
-## Why this module ?  
+## Why this module?  
 
 I do love cmdline tools but most of them don't have autocompletion making us revisit command syntax help over and over again.
 
@@ -60,7 +58,7 @@ Adding tools to a Wsl instance is just specifying the Wsl instance name and the 
 ## Tools
 I've added around 18 helper\tools ...  
 
-![Image Alt text](public/img/Get-PnPWsl2Candy.jpg)
+![Image Alt text](public/img/Get-PnPWsl2Tools.jpg)
 
 ... but you can have your own, just by  :  
 
@@ -101,7 +99,7 @@ This prompt enables you to designate the root folder for the module's assets, in
     
 
 <br>
-We continually enhance this module with new features and tools; your suggestions are welcome, and we invite you to contribute to the project.  
-
-Enjoy !
+I'm constantly adding new features and tools to this module, so if you have any suggestions, please let me know !  
 <br>
+<br>
+Have fun, and feel free to contribute to this project !

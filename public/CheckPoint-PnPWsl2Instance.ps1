@@ -70,11 +70,45 @@ function CheckPoint-PnPWsl2Instance {
         }
         $instancesFolder = $config.PnPWsl2RootFolder + "\instances"
         New-Item -Path "$instancesFolder\$Instance\checkpoints" -ItemType Directory -Force | Out-Null
-
         $exportFile = "$instancesFolder\$Instance\checkpoints\$CheckpointName-$((Get-Date).ToString("yyyyMMddhhmm"))_snap.vhdx"
+
         Write-Log "`b`b"
-        Invoke-Expression ($config.Commands.'Export-WslInstance' -f $Instance, $exportFile )
-        #Import the WSL image to the specified images folder
+###Due to recent changes in the OS , vhd export doesn work if an instance is active ( even if you stop the instance) pfffffffff
+## ... therefore checkpoinst are copy of the instance file with a new name.
+## ugly ... but it works       
+        
+        <# TOBE ACTIVE WHEN POSSIBLE#>
+        # 
+        # $exportCmd= $config.Commands.'Export-WslInstance' -f $Instance, $exportFile
+        # $exportCmd+= "--vhd"
+        # $ct=1
+        #Write-Log "Exporting ..."
+
+        # do{
+           
+        #     $cmd= Invoke-Expression $exportCmd
+        #     $cmd= ($cmd -join "").replace("`0","")
+        #     Write-Log "$cmd"
+        #     if ($cmd -Like "*Wsl/Service/ERROR_SHARING_VIOLATION*") {
+        #         Write-Log "Export $ct [$a]"
+        #         Start-Sleep -Seconds 10
+        #         Write-Log "Stop instance 1"
+        #         Invoke-Expression ("Stop-PnPWsl2Instance -Instance {0}" -f $Instance)
+               
+        #     }else {
+        #         $cmd=$null
+        #     }
+           
+        #     $ct++
+        # }while( $cmd -ne $null)
+
+        ## get parent folder and .vhdx file name
+   
+        $vhdxFile= (Get-Item "$instancesFolder\$Instance\*.vhdx").FullName
+        $exportFile = "$instancesFolder\$Instance\checkpoints\$CheckpointName-$((Get-Date).ToString("yyyyMMddhhmm"))_snap.vhdx"
+        
+        Copy-Item -Path $vhdxFile -Destination $exportFile -Force
+    
         Write-Log "`b`b"
         Write-Log "[[green$CheckpointName : $exportFile[/  created ! `n"
         $env:LogScope = ""

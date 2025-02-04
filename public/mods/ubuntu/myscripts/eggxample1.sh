@@ -31,8 +31,8 @@ echo-print "\n $HELP_MESSAGE_LONG"
 ## installs a package
 echo-print "Installing linux gedit"
 sudo apt-get install gedit -y
-echo-print " Launcg gedit"
-
-gedit & ## the & is used to run the app in the background
+echo-print " gedit is installed !"
+echo-print " lunching gedit... (close gedit to continue)"
+gedit
 
 echo-print "\n\n"

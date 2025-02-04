@@ -22,6 +22,9 @@ function Enable-PnPWsl2 {
         $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
     }
     Process {
+        $redColor = "$([char]0x1b)[1;31m"
+        $restart = $false
+        $resetColor = "$([char]0x1b)[0m"
         if (-not $isAdmin) {
             Write-Log "You need to run this cmdlet as Administrator"
             Write-Log  "Press Enter to continue"

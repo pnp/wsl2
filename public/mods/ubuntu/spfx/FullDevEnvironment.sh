@@ -16,6 +16,15 @@ HELP_MESSAGE_LONG=" This script will install all needed assets for SharePoint Fr
   4) Will also **create the sshkey in wsl updating it to your windows host**
   5) **Import sshkey** into your Azure Devops instance
 "
+END_MESSAGE_LONG=" This script installed all needed assets for SharePoint Framework Development environment following Microsoft guidance
+  mentioned [here](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment)
+
+  1) Installed nvm , node (selected version), gulp-cli, yeoman,microsoft yeoman generator and spfxfastserve
+  2) Created the sfpx self-signed developer certificate
+  3) Imported the certificate to your windows local computer store
+  4) Created the sshkey in wsl updating it to your windows host
+  5) Imported sshkey into your Azure Devops instance
+"
 # Set the root folder for the core scripts
 SCRIPTS_CORE_ROOT_FOLDER="$(dirname "$0")"
 # Source the core script
@@ -44,6 +53,7 @@ source "$SCRIPTS_CORE_ROOT_FOLDER/../sys/wsl-SSHKeyGenerate.sh"
 source "$SCRIPTS_CORE_ROOT_FOLDER/../az/SSHKeyAddToAzDevops.sh"
 # shellcheck disable=SC1091
 source "$SCRIPTS_CORE_ROOT_FOLDER/../spfx/gulp-TrustDevCert.sh" "noprompt"
-
+# Print the end message
+echo-print "\n $END_MESSAGE_LONG"
 # Print two newlines
 echo-print "\n\n"

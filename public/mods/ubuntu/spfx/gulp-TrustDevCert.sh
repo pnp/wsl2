@@ -75,7 +75,8 @@ installdevcert() {
     cd "$windows_temp" || exit
     file="$windows_temp/rushstack-serve.pem"
     # Copy file to temp directory
-    cp ~/.rushstack/rushstack-serve.pem .    
+    cp ~/.rushstack/rushstack-serve.pem ./rushstack-serve.cer    
+    cp ~/.rushstack/rushstack-serve.pem ./rushstack-serve.pem    
     # Convert the file path to Windows format
     fileTemp=$(echo "$file" | sed -e 's|/mnt/\(.\)|\1:|' -e 's|/|\\|g')
     # run the powershell script
@@ -85,7 +86,7 @@ installdevcert() {
     
     echo-print "  Removing SPfx Project ..."
     cd ~ || exit
-    rm -r $rndContent
+    #rm -r $rndContent
     echo-print "  Dummy SPfx Project removed !"
     printf "\n"
     echo-print " End"

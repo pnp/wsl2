@@ -18,7 +18,7 @@ echo-print "\n${GREEN}Environment Initialization...\n"
 echo-print " ${YELLOW}- ${RESET}${LIGHT_WHITE}User added in the setup will be setted as [${BLUE}default user${RESET}]"
 echo-print " ${YELLOW}- ${BLUE}WSLU tools${LIGHT_WHITE} will be installed (usefull wsltools like wslview(fake WSL browser that will open link in default Windows browser))"
 echo-print " ${YELLOW}- ${BLUE}NVM${LIGHT_WHITE} will be installed${RESET}"
-echo-print " ${YELLOW}- ${BLUE}Node10${LIGHT_WHITE} will be installed${RESET}"
+echo-print " ${YELLOW}- ${BLUE}Node18${LIGHT_WHITE} will be installed${RESET}"
 # Ask the user to confirm the environment initialization
 
 # Move to a new line after the key is pressed
@@ -31,16 +31,20 @@ initialize
 # Install the last added superuser
 install-superuser-lastadded
 
+# Install Curl tool
+install-curl
+# Install wget tool
+install-wget
 # Install WSLU tools
 install-wslu
 
 # Install Node Version Manager (NVM)
 install-nvm
 
-# Install Node.js version 10
-install-node10
+# Install Node.js version 18
+install-node18
 
 # Print the end of the environment initialization process
-echo-print "\n\n${GREEN}Environment ready !\n"
+echo-print "\n\n${GREEN}Environment Initialization done !\n"
 
 #!/bin/bash

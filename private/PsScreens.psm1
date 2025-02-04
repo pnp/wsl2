@@ -28,8 +28,11 @@ Displays the small screen with the provided title "Title" and description "This 
 #>
 class PsScreens {
         
-    static [string] ShowMainScreen($label) {
+    static [string] ShowMainScreen($label,$version) {
         $screen= [PsColors]::ApplyColors((Get-Content -path "$ENV:PNPWSL2_SCREEN_MAIN" -Raw ) + $label)
+        ## Get Module Version
+  
+        $screen = $screen.Replace("v00.00.00","v$version")
         Write-Host $screen
         return $screen
     }

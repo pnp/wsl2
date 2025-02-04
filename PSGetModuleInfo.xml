@@ -1,0 +1,136 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">PnP.Wsl2</S>
+      <Version N="Version">1.1.7</Version>
+      <S N="Type">Module</S>
+      <S N="Description">PnP.Wsl2 Cmdlets, module to manage WSL2 Instances</S>
+      <S N="Author">ScoutmanPt(rpinto@pdragon.co)</S>
+      <S N="CompanyName">ScoutmanPt</S>
+      <S N="Copyright">(c) ScoutmanPt(rpinto@pdragon.co), Perspective Dragon. All rights reserved.</S>
+      <DT N="PublishedDate">2024-03-06T02:48:34+00:00</DT>
+      <Obj N="InstalledDate" RefId="1">
+        <DT>2024-12-31T17:17:36.9916063+00:00</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="2">
+            <TN RefId="1">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <Nil N="LicenseUri" />
+      <URI N="ProjectUri">https://www.scoutman.pt/pnpwsl2docs</URI>
+      <URI N="IconUri">https://www.scoutman.pt/imgs/PnPWsl2Logo.png</URI>
+      <Obj N="Tags" RefId="3">
+        <TN RefId="2">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>PnP</S>
+          <S>WSL2</S>
+          <S>PowerShell</S>
+          <S>PnP.PowerShell</S>
+          <S>SPFX</S>
+          <S>Azure</S>
+          <S>SharePoint</S>
+          <S>M365</S>
+          <S>AzureDevOps</S>
+          <S>MachineLearning</S>
+          <S>Linux</S>
+          <S>PSModule</S>
+          <S>PSEdition_Core</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="4">
+        <TN RefId="3">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Workflow</S>
+            <Obj N="Value" RefId="5">
+              <TNRef RefId="2" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Function</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">Command</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <Nil N="ReleaseNotes" />
+      <Obj N="Dependencies" RefId="6">
+        <TNRef RefId="2" />
+        <LST />
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="7">
+        <TN RefId="4">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">(c) ScoutmanPt(rpinto@pdragon.co), Perspective Dragon. All rights reserved.</S>
+          <S N="description">PnP.Wsl2 Cmdlets, module to manage WSL2 Instances</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">True</S>
+          <S N="versionDownloadCount">6706</S>
+          <S N="downloadCount">6706</S>
+          <S N="packageSize">19783769</S>
+          <S N="published">3/6/2024 2:48:34 AM +00:00</S>
+          <S N="created">3/6/2024 2:48:34 AM +00:00</S>
+          <S N="lastEdited">3/6/2024 9:09:46 AM +00:00</S>
+          <S N="lastUpdated">12/31/2024 12:50:00 PM +00:00</S>
+          <S N="tags">PnP WSL2 PowerShell PnP.PowerShell SPFX Azure SharePoint M365 AzureDevOps MachineLearning Linux PSModule PSEdition_Core</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2024-12-31T12:50:00Z</S>
+          <S N="NormalizedVersion">1.1.7</S>
+          <S N="Authors">ScoutmanPt(rpinto@pdragon.co)</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">PnP.Wsl2.nuspec|LICENSE|PnP.Wsl2-help.xml|private\ValidateWslLocalCheckPoint.psm1|private\assets\screens\build\main\splscr-main.ascii|public\Disable-PnPWsl2.ps1|public\Import-PnPWsl2Instance.ps1|public\img\prepgen.ps1|public\mods\ubuntu\m365\PSCore+PnPPowerShell.sh|public\mods\ubuntu\spfx\gulp-TrustDevCert.sh|PnP.Wsl2.Json|private\ValidateWslLocalInstance.psm1|private\assets\screens\build\main\splscr-main.ascii_map|public\Disable-PnPWsl2Telemetry.ps1|public\Invoke-PnPWsl2Script.ps1|public\mods\ubuntu\az\AzureCli+CreatePAT.sh|public\mods\ubuntu\myscripts\eggxample1.sh|public\mods\ubuntu\spfx\gulp-Yo-Mgen-Fs.sh|private\ValidateWslLocalInstanceWithNewEntry.psm1|private\assets\screens\build\main\splscr-main.ascii_raw|public\Enable-PnPWsl2.ps1|public\Remove-PnPWsl2Instance.ps1|public\mods\ubuntu\az\AzureCli.sh|public\mods\ubuntu\myscripts\eggxample2.sh|public\mods\ubuntu\spfx\TrustDevCert\Export-DevCert.ps1|PnP.Wsl2.psd1|private\ValidateWslOnlineDistribution.psm1|private\assets\screens\build\small\generate-screen.ps1|public\Enable-PnPWsl2Telemetry.ps1|public\Restore-PnPWsl2Instance.ps1|public\mods\ubuntu\az\CreatePAT.sh|public\mods\ubuntu\myscripts\eggxample3.sh|public\mods\ubuntu\spfx\TrustDevCert\Start-Process.ps1|PnP.Wsl2.psm1|private\assets\screens\splscr-main.ascii|private\assets\screens\build\small\splscr-small.ascii|public\Export-PnPWsl2Instance.ps1|public\Stop-PnPWsl2.ps1|public\mods\ubuntu\az\SSHKeyAddToAzDevops.sh|public\mods\ubuntu\myscripts\MyFirstScript.sh|public\mods\ubuntu\sys\wsl-Initialize.sh|README.md|private\assets\screens\splscr-small.ascii|private\assets\screens\build\small\splscr-small.ascii_map|public\Get-PnPWsl2Candy.ps1|public\Stop-PnPWsl2Instance.ps1|public\mods\ubuntu\az\SSHKeyAdd\AddSSHKeySelinium.ps1|public\mods\ubuntu\node\Install.sh|public\mods\ubuntu\sys\wsl-SSHKeyGenerate.sh|private\PnPWsl2Helpers.psm1|private\assets\screens\build\index.ps1|private\assets\screens\build\small\splscr-small.ascii_raw|public\Get-PnPWsl2CheckPoint.ps1|public\img\Add-PnPWsl2Instance.gif|public\mods\ubuntu\az\SSHKeyAdd\assemblies\MicrosoftWebDriver.exe|public\mods\ubuntu\node\Nvm.sh|public\mods\ubuntu\sys\wsl-SuperUser.sh|private\PsColors.psm1|private\assets\screens\build\example\generate-screen.ps1|private\assets\screens\build\_refers\splash-screen-baseline.txt|public\Get-PnPWsl2Configuration.ps1|public\img\Add-PnPWsl2Tools.gif|public\mods\ubuntu\az\SSHKeyAdd\assemblies\msedgedriver.exe|public\mods\ubuntu\node\RimRaf.sh|public\mods\ubuntu\sys\wsl-Updates.sh|private\PsScreens.psm1|private\assets\screens\build\example\splscr-example.ascii|public\Add-PnPWsl2Candy.ps1|public\Get-PnPWsl2Distribution.ps1|public\img\FirstUse.jpg|public\mods\ubuntu\az\SSHKeyAdd\assemblies\WebDriver.dll|public\mods\ubuntu\pwsh\PowerShellCore.sh|public\mods\ubuntu\sys\wsl-Utils.sh|private\Send-PnPWsl2TrackEventTelemetry.ps1|private\assets\screens\build\example\splscr-example.ascii_map|public\Add-PnPWsl2Instance.ps1|public\Get-PnPWsl2Help.ps1|public\img\Get-PnPWsl2Help.jpg|public\mods\ubuntu\az\SSHKeyAdd\assemblies\WebDriver.Support.dll|public\mods\ubuntu\python\Miniconda-TensorFlow-DirectML.sh|public\mods\ubuntu\_core\alias.sh|private\ValidateWslCandy.psm1|private\assets\screens\build\example\splscr-example.ascii_raw|public\CheckPoint-PnPWsl2Instance.ps1|public\Get-PnPWsl2Instance.ps1|public\img\Get-PnPWsl2Tools.jpg|public\mods\ubuntu\m365\PnPCliMicrosoft365.sh|public\mods\ubuntu\spfx\FullDevEnvironment.sh|public\mods\ubuntu\_core\core.sh|private\assets\screens\build\main\generate-screen.ps1|public\Copy-PnPWsl2Instance.ps1|public\Get-PnPWsl2Telemetry.ps1|public\img\main-screen.jpg|public\mods\ubuntu\m365\PnPPowerShell.sh|public\mods\ubuntu\spfx\git-Config.sh|public\mods\ubuntu\_core\init.sh</S>
+          <S N="GUID">bf54fc08-8aa5-4b5b-9bdb-92f0767f5c27</S>
+          <S N="PowerShellVersion">7.0.0</S>
+          <S N="CompanyName">Perspective Dragon LDA</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">C:\Users\Win11Wsl2\Documents\PowerShell\Modules\PnP.Wsl2\1.1.7</S>
+    </MS>
+  </Obj>
+</Objs>

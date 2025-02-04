@@ -35,29 +35,12 @@ function Remove-PnPWsl2Instance {
     [OutputType([System.String])]
     Param(
         [Parameter(Mandatory = $true, Position = 0, ValueFromPipeline = $true)]
-        [ValidateScript({
-           $Instance=$_
-
-            # Get the valid instances
-            $validInstances = [ValidateWslLocalInstance]::new().GetValidValues()
-            if ($null -eq $validInstances)
-            {
-                throw "No instances available"
-            }
-            if ($Instance.GetType().Name -eq "String")
-            {
-                $validInstance =$Instance
-            }
-            else{
-                $validInstance =$Instance.Name
-            }
-            # Check if the instance is valid
-            if ($validInstances -contains $validInstance) {
-                $true
-            } else {
-                throw "Invalid instance: $Instance. Valid instances are: $validInstances"
-            }
-        })]
+        [ValidateSet( [ValidateWslLocalInstance] )]
+        [ArgumentCompleter({
+        param($wordToComplete)
+        [string[]] $validValues = [ValidateWslLocalInstance]::new().GetValidValues()
+        $validValues -like "$wordToComplete*"
+    })]
         [ArgumentCompleter({
                 param($wordToComplete)
                     [string[]] $validValues = [ValidateWslLocalInstance]::new().GetValidValues()

@@ -50,7 +50,12 @@ function Export-PnPWsl2Instance {
         [Parameter(Mandatory = $true, Position = 2)]
         $ExportPath
     )
-
+    begin{
+        $env:PNPWSL2_DISABLETELEMETRY = $true
+        #telemetry tracking #cmdletName
+        Send-PnPWsl2TrackEventTelemetry -EventName $MyInvocation.MyCommand.Name
+        $env:LogScope = ""
+    }
     Process {
         $env:LogScope = ""
         if (-Not(Test-Wsl2Enabled)) {
@@ -65,14 +70,20 @@ function Export-PnPWsl2Instance {
         }
         Write-Log "Exporting ... [/" -NoNewLine
         $exportFile= "$ExportPath\$($Instance)-$((Get-Date).ToString("yyyyMMddhhmm"))"
-        if ($Type -eq "VhdFile") {
-            $exportFile+= ".vhdx --vhdx"
+        if ($Type -eq "TarFile"){
+            $exportFile+= ".tar"
+            Invoke-Expression ($config.Commands.'Export-WslInstance' -f $Instance, $exportFile )
         }
         else {
-            $exportFile+= ".tar "
+            ###Due to recent changes in the OS , vhd export doesn work if an instance is active ( even if you stop the instance) pfffffffff
+            ## ... therefore checkpoinst are copy of the instance file with a new name.
+            ## ugly ... but it works       
+            $instancesFolder = $config.PnPWsl2RootFolder + "\instances"
+            $vhdxFile= (Get-Item "$instancesFolder\$Instance\*.vhdx").FullName
+            $exportFile+= ".vhdx"
+            Copy-Item -Path $vhdxFile -Destination $exportFile -Force
         }
-        Invoke-Expression ($config.Commands.'Export-WslInstance' -f $Instance, $exportFile )
-        Write-Log "[[green$Instance[/ Instance exported to $ExportPath !`n"
+        Write-Log "[[green$Instance[/ Instance exported to $ExportPath [ $exportFile]!`n"
         $env:LogScope = ""
     }
 }

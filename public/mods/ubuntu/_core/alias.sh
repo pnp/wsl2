@@ -26,7 +26,7 @@ get_candy_bash_aliases() {
 
         # # Construct the alias command
         alias_name="pnpwsl2-SyncAlias"
-        alias_command="$alias_name() { bash '$file';}; export -f $alias_name"
+        alias_command="$alias_name() { bash '$file'; source ~/.bash_aliases_pnpwsl2; source ~/.bashrc;}; export -f $alias_name"
         # # Print the alias command
         echo "$alias_command"
     done
@@ -38,7 +38,7 @@ get_candy_bash_aliases() {
 ChangeBashRcFile() {
 
     pnpwsl2bashAliasFile=~/.bash_aliases_pnpwsl2
-    output="if [ -f /home/s/.bash_aliases_pnpwsl2 ]; then source /home/s/.bash_aliases_pnpwsl2; fi"
+    output="if [ -f ~/.bash_aliases_pnpwsl2 ]; then source ~/.bash_aliases_pnpwsl2; fi"
 
     # The file to modify
     file="$HOME/.bashrc"
@@ -78,6 +78,20 @@ ChangeBashRcFile() {
 
     done
 }
+# Ensure system-wide alias loading
+ensure_system_wide_alias() {
+    system_profile="/etc/profile"
+    alias_source="source ~/.bash_aliases_pnpwsl2"
+
+    # Check if the alias source line already exists in /etc/profile
+    if ! grep -Fxq "$alias_source" "$system_profile"; then
+        echo "Adding source command to $system_profile..."
+        echo "$alias_source" | sudo tee -a "$system_profile" > /dev/null
+    else
+        echo "Source command already exists in $system_profile."
+    fi
+}
+
 echo "PnPWsl2 Alias start sync ..."
 SCRIPT_ROOT="$(realpath "$(dirname "$0")")"
 path=$(readlink -f "$SCRIPT_ROOT/../..")
@@ -85,4 +99,5 @@ path=$(readlink -f "$SCRIPT_ROOT/../..")
 ChangeBashRcFile "$path"
 echo " Refresh bash profile ..."
 source ~/.bash_aliases_pnpwsl2
+ensure_system_wide_alias
 echo "PnPWsl2 Alias is synced !"

@@ -19,9 +19,11 @@ $ErrorActionPreference = "Stop"
 #>
 function Get-PnPWsl2Telemetry {
    begin{
-
-     $Setting = $env:PNPWSL2_DISABLETELEMETRY -eq $true ? "OFF" : "ON"
-     $env:LogScope = ""
+        #telemetry tracking #cmdletName
+        Send-PnPWsl2TrackEventTelemetry -EventName $MyInvocation.MyCommand.Name
+        $env:LogScope = ""
+        $Setting = $env:PNPWSL2_DISABLETELEMETRY -eq $true ? "OFF" : "ON"
+        $env:LogScope = ""
    }
    Process {
 

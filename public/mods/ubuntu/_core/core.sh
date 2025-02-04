@@ -75,6 +75,42 @@ inquireWithOptions () {
         esac
     done
 }
+# Function to prompt the user with a question and options
+inquireWithMultipleOptions() {
+    local question="$1"
+    shift
+    local options=("$@")
+
+
+
+    # Display the question
+    echo -e "\n${question}\n" >&2
+
+    # Explicitly loop through the options and flush output
+    for i in "${!options[@]}"; do
+        echo -e "${YELLOW}[$((i + 1))]${RESET} ${options[i]}" >&2
+    done
+
+    # Prompt the user for input
+    echo -e "\nPlease select an option [1-${#options[@]}]: " >&2
+    while true; do
+        read -p "> " choice
+        if [[ "$choice" =~ ^[1-9][0-9]*$ ]] && (( choice >= 1 && choice <= ${#options[@]} )); then
+            # Return the selected option
+            echo "${options[choice - 1]}"
+            return 0
+        else
+            # Clear the invalid input and re-prompt
+            echo "Invalid option. Please try again." >&2
+            echo -e "\n${question}\n" >&2
+            for i in "${!options[@]}"; do
+                echo -e "${YELLOW}[$((i + 1))]${RESET} ${options[i]}" >&2
+            done
+
+            echo -e "\nPlease select an option [1-${#options[@]}]: " >&2
+        fi
+    done
+}
 install-nvm() {
     # Install Node Version Manager
     modSection="NVM"
@@ -83,11 +119,13 @@ install-nvm() {
       modName="Core"
     fi
     echo-print-separator "$modName"  "$modSection"
+    echo-print "\n Start \n"
     curl -sS -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash #> /dev/null 2>&1
     # shellcheck disable=SC1090
     source ~/.nvm/nvm.sh #> /dev/null 2>&1
     printf "\n\n"
     echo-print " NVM Installed"
+    echo-print "\n End"
 }
 
 install-node10() {
@@ -98,7 +136,7 @@ install-node10() {
       modName="Core"
     fi
     echo-print-separator "$modName"  "$modSection"
-    echo-print " Start"
+    echo-print "\n Start \n"
     echo-print "   Check if it is installed"
     if nvm ls | grep -q "v10"; then
         echo-print "   is installed!"
@@ -111,9 +149,31 @@ install-node10() {
         nvm use 10 --no-colors
         echo-print "   $modSection installed !"
     fi
-    echo-print " End"
+    echo-print "\n End"
 }
+install-node18() {
+    # Install Node.js version 10
+    modSection="node v18"
+    if [ -z "$modName" ]
+    then
+      modName="Core"
+    fi
+    echo-print-separator "$modName"  "$modSection"
+    echo-print "\n Start \n"
+    echo-print "   Check if it is installed"
+    if nvm ls | grep -q "v18"; then
+        echo-print "   is installed!"
+    else
+        echo-print "   $modSection is not installed."
+        echo-print "    $modSection install ..."
 
+        printf "\n\n"
+        nvm install 18.18.0 --no-colors
+        nvm use 18.18.0 --no-colors
+        echo-print "   $modSection installed !"
+    fi
+    echo-print "\n End"
+}
 install-buildessential()
 {
 
@@ -123,10 +183,12 @@ install-buildessential()
     then
       modName="Core"
     fi
-    echo-print-separator
+    echo-print-separator "$modName"  "$modSection"
+    echo-print "\n Start \n"
     sudo apt-get install build-essential
     sudo apt update
     sudo apt upgrade
+    echo-print "\n End"
 }
 
 install-wslu(){
@@ -138,8 +200,17 @@ install-wslu(){
       modName="Core"
     fi
     echo-print-separator "$modName"  "$modSection"
+    echo-print "\n Start \n"
+    # Install necessary packages
+    sudo apt install -y gnupg2 apt-transport-https
+    # Download and dearmor the GPG key
+    wget -qO - https://pkg.wslutiliti.es/public.key | sudo gpg --dearmor -o /usr/share/keyrings/wslu-archive-keyring.gpg
+    # Add the repository to your sources list
+    echo "deb [signed-by=/usr/share/keyrings/wslu-archive-keyring.gpg] https://pkg.wslutiliti.es/debian bookworm main" | sudo tee /etc/apt/sources.list.d/wslu.list
+
     sudo apt update
     sudo apt install wslu
+    # sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 23F3D4EA75716059 #debian
     # Set the file path
     bashrc_file="$HOME/.bashrc"
     # Read the entire content of the file
@@ -150,6 +221,7 @@ install-wslu(){
     echo "$modified_content" > "$bashrc_file"
     echo ""| sudo tee -a "$HOME/.bashrc"
     echo "export BROWSER=wslview" | sudo tee -a "$HOME/.bashrc"
+    echo-print "\n End"
 }
 
 find_superuser() {
@@ -176,7 +248,7 @@ install-superuser-lastadded() {
       modName="Core"
     fi
     echo-print-separator "$modName"  "$modSection"
-    echo-print " Start"
+    echo-print "\n Start \n"
     echo-print "  Modify the /etc/wsl.conf file adding setup user as default user"
 
     # Path to wall.conf file
@@ -195,12 +267,31 @@ install-superuser-lastadded() {
     cat /etc/wsl.conf
     echo -e "\n#########################\n"
 
-    echo-print " End"
+    echo-print "\n End"
 }
-
+install-curl() {
+    modSection="curl"
+    echo-print-separator "$modName"  "$modSection"
+    # Install Curl
+    echo-print "\n Start \n"
+    printf "\n"
+    sudo apt install curl -y    
+    echo-print "\n   $modSection installed !"
+    echo-print "\n End"
+}
+install-wget() {
+    modSection="wget"
+    echo-print-separator "$modName"  "$modSection"
+    # Install Curl
+    echo-print "\n Start \n"
+    printf "\n"
+    sudo apt install wget -y    
+    echo-print "\n   $modSection installed !"
+    echo-print "\n End"
+}
 install-azurecli() {
     # Install Azure CLI
-    echo-print "\n Start"
+    echo-print "\n Start \n"
     printf "\n\n"
     curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash #> /dev/null 2>&1
     az extension add --name azure-devops
@@ -217,15 +308,17 @@ initialize () {
       modName="Core"
     fi
     echo-print-separator "$modName"  "$modSection"
-    echo-print "Bash Core loading ..."
+    echo-print "\n Start \n"
+    echo-print "  Bash Core loading ..."
     #get the directory of the script being run:
     SCRIPTS_CORE_ROOT_FOLDER="$(dirname "$0")"
     # shellcheck disable=SC2034
     SCRIPTS_MODS_ROOT_FOLDER="$(dirname "$SCRIPTS_CORE_ROOT_FOLDER")"
-    echo-print  " Core functions loading ..."
+    echo-print  "   Core functions loading ..."
     echo-initialize
-    echo-print " Core functions loaded!"
-    echo-print  "Bash Core loaded!"
+    echo-print "   Core functions loaded!"
+    echo-print  "  Bash Core loaded!"
+    echo-print "\n End"
 }
 
 # Initialize echo functions

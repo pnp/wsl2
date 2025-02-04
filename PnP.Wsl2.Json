@@ -11,11 +11,10 @@
   },  
   "Commands": {
     "Add-WslInstance": "--install -d {0}",
-    "Start-PnPWsl2": "wsl",
     "Stop-PnPWsl2": "wsl --shutdown",
     "Terminate-WSLInstance": "wsl --terminate {0}",
-    "Export-WSLInstance": "wsl --export {0} {1}",
-    "Import-WSLInstance": "wsl --import {0} {1} {2}",
+    "Export-WSLInstance": "wsl --export {0} {1} ",
+    "Import-WSLInstance": "wsl --import {0} {1} {2} ",
     "Set-WslDefaultVersion": "wsl --set-default-version 2",
     "Set-WslDefaultInstance": "wsl --set-default {0}",
     "Get-WslDistributionsOnline": "wsl --list --online ",
@@ -25,5 +24,9 @@
     "Execute-WslBashFile": "wsl -d {0} bash -ic '{1}'",
     "Execute-WslBashFiles": "wsl -d {0} bash -ic '{1};{2}'",
     "Remove-WslInstance": "wsl --unregister '{0}'"
+  },
+  "ReplaceParams": {   
+    "{GITHUB.USER}": "user",
+    "{GITHUB.USER.EMAIL}": "user@pnpcandy.com"
   }
 }

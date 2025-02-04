@@ -1,7 +1,7 @@
 #!/bin/bash
 # Defines the module\section name
 modName="Azure"
-modSection="Azure Devops - Create PAT (1 Year)"
+modSection="Azure Devops - Create PAT (1 Year) "
 # Define the help message
 # shellcheck disable=SC2034
 HELP_MESSAGE="Creates a AzureDevOps Personal Access Token (1 Year)" 
