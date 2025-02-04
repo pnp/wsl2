@@ -19,15 +19,15 @@ Get-PnPWsl2Distribution [[-instanceName] <String>] [-ProgressAction <ActionPrefe
 ## DESCRIPTION
 This function retrieves the WSL2 distributions based on the specified parameters.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Get-PnPWsl2Distribution
 Retrieves all online WSL2 distributions.
 ```
 
-## EXAMPLE 2
+### EXAMPLE 2
 ```
 Get-PnPWsl2Distribution -instanceName "Ubuntu-20.04"
 Retrieves the WSL2 distribution with the specified instance name.
@@ -64,37 +64,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

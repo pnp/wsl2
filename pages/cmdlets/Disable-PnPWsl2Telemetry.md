@@ -19,43 +19,9 @@ Disable-PnPWsl2Telemetry
 ## DESCRIPTION
 The Disable-PnPWsl2Telemetry function is used to disable telemetry for PnP.WSL2 .
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Disable-PnPWsl2Telemetry
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -102,7 +102,7 @@ function Import-PnPWsl2Instance {
             $importFile = $importFile + " --vhd"
         }
         Invoke-Expression ( $cmd -f $importInstance , "$instancesFolder\$importInstance", $importFile )
-     
+
         Write-Log "[[green$importInstance[/ Instance imported!`n" # Log a success message after importing the Instance
         $env:LogScope = ""
     }

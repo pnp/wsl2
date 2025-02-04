@@ -1884,11 +1884,11 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
       <command:verb>Stop</command:verb>
       <command:noun>PnPWsl2</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Stops the WSL2 service.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>The Stop-PnPWsl2 cmdlet stops the WSL2 service if it is currently running.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
@@ -1921,26 +1921,8 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
     </command:parameters>
-    <command:inputTypes>
-      <command:inputType>
-        <dev:type>
-          <maml:name>None</maml:name>
-        </dev:type>
-        <maml:description>
-          <maml:para></maml:para>
-        </maml:description>
-      </command:inputType>
-    </command:inputTypes>
-    <command:returnValues>
-      <command:returnValue>
-        <dev:type>
-          <maml:name>System.Object</maml:name>
-        </dev:type>
-        <maml:description>
-          <maml:para></maml:para>
-        </maml:description>
-      </command:returnValue>
-    </command:returnValues>
+    <command:inputTypes />
+    <command:returnValues />
     <maml:alertSet>
       <maml:alert>
         <maml:para></maml:para>
@@ -1948,10 +1930,10 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Stop-PnPWsl2</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>This command stops the WSL2 service.</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -1963,28 +1945,20 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
       <command:verb>Stop</command:verb>
       <command:noun>PnPWsl2Instance</command:noun>
       <maml:description>
-        <maml:para>{{ Fill in the Synopsis }}</maml:para>
+        <maml:para>Stops a WSL2 instance.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>{{ Fill in the Description }}</maml:para>
+      <maml:para>The Stop-PnPWsl2Instance cmdlet stops a running WSL2 instance. The instance to stop is specified by the Instance parameter.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
         <maml:name>Stop-PnPWsl2Instance</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
           <maml:name>Instance</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Instance Description }}</maml:para>
+            <maml:para>Specifies the instance to stop. This parameter is mandatory and accepts only valid WSL2 instance names.</maml:para>
           </maml:description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">abc</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">MyProjs</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">OnE</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Ubuntu0</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Ubuntu2004</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">Ubuntu2004-Test</command:parameterValue>
-          </command:parameterValueGroup>
           <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
           <dev:type>
             <maml:name>Object</maml:name>
@@ -1992,10 +1966,10 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
-          <maml:name>Confirm</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
           <maml:description>
-            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -2003,10 +1977,10 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
-          <maml:name>WhatIf</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
           <maml:description>
-            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
           </maml:description>
           <dev:type>
             <maml:name>SwitchParameter</maml:name>
@@ -2029,22 +2003,10 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
-        <maml:name>Confirm</maml:name>
-        <maml:description>
-          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
-        </maml:description>
-        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
-        <dev:type>
-          <maml:name>SwitchParameter</maml:name>
-          <maml:uri />
-        </dev:type>
-        <dev:defaultValue>False</dev:defaultValue>
-      </command:parameter>
-      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
         <maml:name>Instance</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Instance Description }}</maml:para>
+          <maml:para>Specifies the instance to stop. This parameter is mandatory and accepts only valid WSL2 instance names.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
         <dev:type>
@@ -2057,6 +2019,18 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
         <maml:name>WhatIf</maml:name>
         <maml:description>
           <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
         <dev:type>
@@ -2078,26 +2052,8 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
     </command:parameters>
-    <command:inputTypes>
-      <command:inputType>
-        <dev:type>
-          <maml:name>None</maml:name>
-        </dev:type>
-        <maml:description>
-          <maml:para></maml:para>
-        </maml:description>
-      </command:inputType>
-    </command:inputTypes>
-    <command:returnValues>
-      <command:returnValue>
-        <dev:type>
-          <maml:name>System.Object</maml:name>
-        </dev:type>
-        <maml:description>
-          <maml:para></maml:para>
-        </maml:description>
-      </command:returnValue>
-    </command:returnValues>
+    <command:inputTypes />
+    <command:returnValues />
     <maml:alertSet>
       <maml:alert>
         <maml:para></maml:para>
@@ -2105,10 +2061,10 @@ Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; {{ Add example code here }}</dev:code>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Stop-PnPWsl2Instance -Instance "MyInstance"</dev:code>
         <dev:remarks>
-          <maml:para>{{ Add example description here }}</maml:para>
+          <maml:para>This command stops the WSL2 instance named "MyInstance".</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>

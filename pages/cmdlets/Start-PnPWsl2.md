@@ -19,9 +19,9 @@ Start-PnPWsl2 [-Instance] <Object> [-ProgressAction <ActionPreference>] [<Common
 ## DESCRIPTION
 The Start-PnPWsl2 function starts a WSL instance.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Start-PnPWsl2 -Instance "Ubuntu-20.04"
 ```
@@ -60,37 +60,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

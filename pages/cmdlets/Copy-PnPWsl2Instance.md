@@ -20,9 +20,9 @@ Copy-PnPWsl2Instance [-Instance] <Object> -NewInstanceName <Object> [-Force]
 ## DESCRIPTION
 This function allows you to copy an existing WSL 2 Instance to a new Instance with a specified name.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Copy-PnPWsl2Instance -Instance "Ubuntu-20.04" -NewInstanceName "MyUbuntu"
 ```
@@ -92,37 +92,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

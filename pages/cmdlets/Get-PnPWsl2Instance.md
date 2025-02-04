@@ -19,44 +19,10 @@ Get-PnPWsl2Instance
 ## DESCRIPTION
 This function retrieves the instances of WSL2 distributions.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Get-PnPWsl2Instance
 Retrieves the local WSL2 instances distributions.
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

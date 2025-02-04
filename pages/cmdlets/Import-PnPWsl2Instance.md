@@ -20,9 +20,9 @@ Import-PnPWsl2Instance -InstanceFile <Object> [-Instance] <Object> [-ProgressAct
 ## DESCRIPTION
 The Import-PnPWsl2Instance function imports a WSL2 Instance from a tar file (zip file) and creates a new Instance with the specified name.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Import-PnPWsl2Instance -InstanceFile "C:\path\to\Instance.tar" -Instance "MyInstance"
 Imports the WSL2 Instance from the specified tar file (zip file) and creates a new Instance named "MyInstance".
@@ -75,37 +75,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

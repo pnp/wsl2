@@ -83,7 +83,7 @@
 A &quot;Candy&quot; is simply a bash script to be applied on a WSL\Linux environment .
 It can be use to install applications, configure settings or even populate linux environments  (yeah , #sky is the limit !) .</p>
 <h2 id="candy-pot-">Candy Pot ...</h2>
-<p>PnP Wsl2 Candy Pot has around <strong>24</strong> items which can help setting up, configuring and maintaining the linux environments inside our WSL instances. Each of the cmdlets is documented to aid in learning how to use it . Hey ... you can even add your <a href="index.html#myscripts">own</a> !</p>
+<p>PnP Wsl2 Candy Pot has around <strong>26</strong> items which can help setting up, configuring and maintaining the linux environments inside our WSL instances. Each of the cmdlets is documented to aid in learning how to use it . Hey ... you can even add your <a href="index.html#myscripts">own</a> !</p>
 <h3 id="azure">Azure</h3>
 <ul>
 <li><h4 id="ub-az-azurecli">🍭ub-az-AzureCli</h4>
@@ -118,6 +118,19 @@ Creates a AzureDevOps Personal Access Token that is valid for 1 year</li>
 </li>
 </ul>
 <pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-az-SSHKeyAddToAzDevops -Instance myinstance
+</code></pre>
+<h3 id="dotnet">dotnet</h3>
+<ul>
+<li><h4 id="ub-dotnet-sdkinstall">🍭ub-dotnet-SdkInstall</h4>
+<p>Installs a specified version of <a href="https://nodejs.org/en">Node.js</a> using the Node Version Manager (NVM).</p>
+<ol>
+<li>It first checks if the requested version is already installed.</li>
+<li>If the requested version is not installed, the script installs it using NVM</li>
+<li>Sets installed version as the current version</li>
+</ol>
+</li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-dotnet-SdkInstall -Instance myinstance
 </code></pre>
 <h3 id="m365">M365</h3>
 <ul>
@@ -285,11 +298,18 @@ After execution take a peek at your Windows Start Menu, you should see a new ent
 <pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-myscripts-eggxample2 -Instance myinstance
 </code></pre>
 <ul>
-<li><h4 id="ub-myscripts-myfirstscript">🍭ub-myscripts-MyFirstScript</h4>
+<li><h4 id="ub-myscripts-eggxample3">🍭ub-myscripts-eggxample3</h4>
 <p>Installs linux x11 apps and shows a clock and a calc</p>
 <p>Eggxample1 is a script that installs X11 apps (linux), shows a linux clock and a linux calc.
-Purpose is to show how to install a package and running appsin linux.</p>
+Purpose is to show how to install a package and run a process in linux.</p>
 </li>
+</ul>
+<pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-myscripts-eggxample3 -Instance myinstance
+</code></pre>
+<ul>
+<li><h4 id="ub-myscripts-myfirstscript">🍭ub-myscripts-MyFirstScript</h4>
+Simple Hello World!<br>
+Purpose is to have a .sh baseline.</li>
 </ul>
 <pre><code class="lang-powershell">  Add-PnPWsl2Candy -Candy ub-myscripts-MyFirstScript -Instance myinstance
 </code></pre>
@@ -306,7 +326,7 @@ However out of the box <a href="/candy/index.html">Candy</a> assets will be upda
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/ScoutmanPt/test/blob/main/pages/candy/index.md/#L1" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/pnp/wsl2/blob/release1.18/pages/candy/index.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>

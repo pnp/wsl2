@@ -77,7 +77,7 @@ function Export-PnPWsl2Instance {
         else {
             ###Due to recent changes in the OS , vhd export doesn work if an instance is active ( even if you stop the instance) pfffffffff
             ## ... therefore checkpoinst are copy of the instance file with a new name.
-            ## ugly ... but it works       
+            ## ugly ... but it works
             $instancesFolder = $config.PnPWsl2RootFolder + "\instances"
             $vhdxFile= (Get-Item "$instancesFolder\$Instance\*.vhdx").FullName
             $exportFile+= ".vhdx"

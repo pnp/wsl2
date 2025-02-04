@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-PnPWsl2Instance
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Stops a WSL2 instance.
 
 ## SYNTAX
 
@@ -18,45 +18,31 @@ Stop-PnPWsl2Instance [-Instance] <Object> [-ProgressAction <ActionPreference>] [
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+The Stop-PnPWsl2Instance cmdlet stops a running WSL2 instance.
+The instance to stop is specified by the Instance parameter.
 
+## EXAMPLES
 
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
+### EXAMPLE 1
+```
+Stop-PnPWsl2Instance -Instance "MyInstance"
 ```
 
-{{ Add example description here }}
+This command stops the WSL2 instance named "MyInstance".
 
 
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -Instance
-{{ Fill Instance Description }}
+Specifies the instance to stop.
+This parameter is mandatory and accepts only valid WSL2 instance names.
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
-Accepted values: abc, MyProjs, OnE, Ubuntu0, Ubuntu2004, Ubuntu2004-Test
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -70,6 +56,21 @@ The cmdlet is not run.
 Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named
@@ -92,47 +93,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-### None
-
-
-
-### System.Object
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

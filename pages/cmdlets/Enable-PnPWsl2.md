@@ -21,9 +21,9 @@ The Enable-PnPWsl2 function enables the required features for running WSL2.
 It checks if the cmdlet is running with administrator privileges and then enables the 'Microsoft-Windows-Subsystem-Linux' and 'VirtualMachinePlatform' features.
 Finally, it restarts the computer to apply the changes.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Enable-PnPWsl2
 ```
@@ -44,37 +44,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

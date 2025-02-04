@@ -20,9 +20,9 @@ Add-PnPWsl2Candy [-Instance] <Object> [-Candy] <Object> [-ProgressAction <Action
 ## DESCRIPTION
 The Add-PnPWsl2Candy function installs WSL tools (Candy) by executing the specified scripts.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Add-PnPWsl2Candy -Instance "Ubuntu-20.04" -Candy "PowerShell"
 ```
@@ -77,37 +77,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

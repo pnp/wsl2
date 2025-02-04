@@ -19,9 +19,9 @@ Get-PnPWsl2CheckPoint [-Instance] <Object> [-ProgressAction <ActionPreference>] 
 ## DESCRIPTION
 The Get-PnPWsl2CheckPoint function retrieves the checkpoints of a specified WSL2 instance.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Get-PnPWsl2CheckPoint -Instance "Ubuntu-20.04"
 ```
@@ -60,37 +60,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

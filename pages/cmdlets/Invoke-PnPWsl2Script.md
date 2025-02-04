@@ -21,9 +21,9 @@ Invoke-PnPWsl2Script [-ScriptPath] <Object> [-Instance] <Object> [-ProgressActio
 The Invoke-PnPWsl2Script function is used to execute a Bash script in a WSL 2 Instance.
 It takes the script base name and the target WSL 2 Instance as mandatory parameters.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Invoke-PnPWsl2Script -scriptBaseName "MyScript.sh" -Instance "Ubuntu-20.04"
 ```
@@ -77,37 +77,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

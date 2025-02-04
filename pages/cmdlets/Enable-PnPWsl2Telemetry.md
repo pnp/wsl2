@@ -19,43 +19,9 @@ Enable-PnPWsl2Telemetry
 ## DESCRIPTION
 The Enable-PnPWsl2Telemetry function is used to enable telemetry for PnP.WSL2 .
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Enable-PnPWsl2Telemetry
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

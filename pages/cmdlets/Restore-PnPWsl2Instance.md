@@ -23,15 +23,15 @@ The cmdlet validates the instance name and the checkpoint before attempting to r
 If the instance name or the checkpoint is invalid, it throws an error.
 If the -Force switch is not provided, it prompts for confirmation before restoring the instance.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 # Restore a PnP WSL2 instance named "MyInstance" from a checkpoint named "MyCheckpoint"
 Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint"
 ```
 
-## EXAMPLE 2
+### EXAMPLE 2
 ```
 # Restore a PnP WSL2 instance named "MyInstance" from a checkpoint named "MyCheckpoint" without prompting for confirmation
 Restore-PnPWsl2Instance -Instance "MyInstance" -CheckPoint "MyCheckpoint" -Force
@@ -85,37 +85,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

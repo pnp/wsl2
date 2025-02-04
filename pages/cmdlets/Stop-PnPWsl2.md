@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-PnPWsl2
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Stops the WSL2 service.
 
 ## SYNTAX
 
@@ -17,16 +17,16 @@ Stop-PnPWsl2 [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+The Stop-PnPWsl2 cmdlet stops the WSL2 service if it is currently running.
 
+## EXAMPLES
 
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
+### EXAMPLE 1
+```
+Stop-PnPWsl2
 ```
 
-{{ Add example description here }}
+This command stops the WSL2 service.
 
 
 
@@ -44,47 +44,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-### None
-
-
-
-### System.Object
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

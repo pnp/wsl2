@@ -6,7 +6,7 @@ It can be use to install applications, configure settings or even populate linux
 
 ## Candy Pot ...
 
-PnP Wsl2 Candy Pot has around **24** items which can help setting up, configuring and maintaining the linux environments inside our WSL instances. Each of the cmdlets is documented to aid in learning how to use it . Hey ... you can even add your [own](index.html#myscripts) !
+PnP Wsl2 Candy Pot has around **26** items which can help setting up, configuring and maintaining the linux environments inside our WSL instances. Each of the cmdlets is documented to aid in learning how to use it . Hey ... you can even add your [own](index.html#myscripts) !
 
 ### Azure
 - #### 🍭ub-az-AzureCli
@@ -45,6 +45,18 @@ PnP Wsl2 Candy Pot has around **24** items which can help setting up, configurin
  ```
 
 
+### dotnet
+- #### 🍭ub-dotnet-SdkInstall
+  Installs a specified version of [Node.js](https://nodejs.org/en) using the Node Version Manager (NVM).
+
+  1) It first checks if the requested version is already installed.
+  2) If the requested version is not installed, the script installs it using NVM
+  3) Sets installed version as the current version
+ ```powershell
+   Add-PnPWsl2Candy -Candy ub-dotnet-SdkInstall -Instance myinstance
+ ```
+
+
 ### M365
 - #### 🍭ub-m365-PnPCliMicrosoft365
   Installs @pnp/cli-microsoft365.
@@ -70,6 +82,8 @@ PnP Wsl2 Candy Pot has around **24** items which can help setting up, configurin
  ```powershell
    Add-PnPWsl2Candy -Candy ub-m365-PSCore+PnPPowerShell -Instance myinstance
  ```
+
+
 
 
 
@@ -230,11 +244,17 @@ PnP Wsl2 Candy Pot has around **24** items which can help setting up, configurin
  ```powershell
    Add-PnPWsl2Candy -Candy ub-myscripts-eggxample2 -Instance myinstance
  ```
-- #### 🍭ub-myscripts-MyFirstScript
+- #### 🍭ub-myscripts-eggxample3
   Installs linux x11 apps and shows a clock and a calc 
 
   Eggxample1 is a script that installs X11 apps (linux), shows a linux clock and a linux calc.
-  Purpose is to show how to install a package and running appsin linux.
+  Purpose is to show how to install a package and run a process in linux.
+ ```powershell
+   Add-PnPWsl2Candy -Candy ub-myscripts-eggxample3 -Instance myinstance
+ ```
+- #### 🍭ub-myscripts-MyFirstScript
+  Simple Hello World!  
+  Purpose is to have a .sh baseline.
  ```powershell
    Add-PnPWsl2Candy -Candy ub-myscripts-MyFirstScript -Instance myinstance
  ```

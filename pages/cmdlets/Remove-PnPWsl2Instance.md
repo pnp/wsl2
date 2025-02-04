@@ -23,15 +23,15 @@ It requires the name of the instance as a mandatory parameter.
 The cmdlet validates the instance name before attempting to remove it.
 If the -Force switch is not provided, it prompts for confirmation before removing the instance.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 # Remove a PnP WSL2 instance named "MyInstance"
 Remove-PnPWsl2Instance -Instance "MyInstance"
 ```
 
-## EXAMPLE 2
+### EXAMPLE 2
 ```
 # Remove a PnP WSL2 instance named "MyInstance" without prompting for confirmation
 Remove-PnPWsl2Instance -Instance "MyInstance" -Force
@@ -123,37 +123,3 @@ Accept wildcard characters: False
 
 
 ### System.String
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

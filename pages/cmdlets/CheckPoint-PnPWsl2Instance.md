@@ -20,9 +20,9 @@ CheckPoint-PnPWsl2Instance [-Instance] <Object> -CheckpointName <Object> [-Force
 ## DESCRIPTION
 The CheckPoint-PnPWsl2Instance function creates a new checkpoint of a specified WSL2 instance.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 CheckPoint-PnPWsl2Instance -Instance "Ubuntu-20.04" -CheckpointName "MyCheckpoint"
 ```
@@ -93,37 +93,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

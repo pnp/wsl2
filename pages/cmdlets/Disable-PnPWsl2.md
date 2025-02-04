@@ -21,9 +21,9 @@ The Disable-PnPWsl2 function disables the Windows features 'VirtualMachinePlatfo
 It prompts the user for confirmation before disabling the features and also checks if the cmdlet is being run as an administrator.
 After disabling the features, it prompts the user to restart the machine.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Disable-PnPWsl2
 ```
@@ -44,37 +44,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

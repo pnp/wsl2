@@ -21,15 +21,15 @@ The Get-PnPWsl2Configuration function retrieves the configuration settings for P
 It displays basic information about the configuration, such as the PnPWsl2 root folder, WSL tools folder, and WSL images root folder.
 If the -detailed switch parameter is specified, it also displays the replace parameters and used internal WSL functions.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Get-PnPWsl2Configuration
 Retrieves and displays the basic configuration information for PnPWsl2.
 ```
 
-## EXAMPLE 2
+### EXAMPLE 2
 ```
 Get-PnPWsl2Configuration -details
 Retrieves and displays detailed configuration information for PnPWsl2, including replace parameters and WSL functions.
@@ -75,37 +75,3 @@ Accept wildcard characters: False
 
 
 ### System.Collections.Hashtable
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

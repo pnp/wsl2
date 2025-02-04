@@ -20,44 +20,10 @@ Get-PnPWsl2Help
 The Get-PnPWsl2Help function retrieves the module configuration and displays a small screen with the title and description of the configuration.
 It then generates a basic information message about the PnP.WSL2 module and its available commands.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Get-PnPWsl2Help
 Displays a basic help message for the PnP.WSL2 module.
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

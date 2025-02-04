@@ -15,7 +15,7 @@ $env:PNPWSL2_APPI_ENDPOINT= $moduleData.PrivateData.Constants.AppInsightsIngesti
 $env:PNPWSL2_APPI_INSTRKEY =  $moduleData.PrivateData.Constants.AppInsightsInstrumentationKey
 $env:PNPWSL2_TELEMETRY_INSTANCE = ([guid]::NewGuid().ToString("N"))
 $env:PNPWSL2_TELEMETRY_ISON = $true
-Send-PnPWsl2TrackEventTelemetry -EventName "Import-Module" 
+Send-PnPWsl2TrackEventTelemetry -EventName "Import-Module"
 # Get and private function definition files
 $public = @(Get-ChildItem -Path "$PSScriptRoot\Public\*.ps1" -Exclude "*.Tests.*" -ErrorAction SilentlyContinue)
 # Importing all functions
@@ -28,7 +28,7 @@ foreach ($import in $public) {
         Write-Error "Failed to import function $($import.FullName): $_"
     }
 }
-Initialize-ModuleConfiguration 
+Initialize-ModuleConfiguration
 
 Export-ModuleMember -Function $public.BaseName
 

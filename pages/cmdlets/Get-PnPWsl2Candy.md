@@ -19,9 +19,9 @@ Get-PnPWsl2Candy [-IncludePath] [-ProgressAction <ActionPreference>] [<CommonPar
 ## DESCRIPTION
 The Get-PnPWsl2Candy retrieves a list of current available tools (Candy\scripts).
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Get-PnPWsl2Candy
 ```
@@ -60,37 +60,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

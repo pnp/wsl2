@@ -21,9 +21,9 @@ Export-PnPWsl2Instance [-Instance] <Object> [-Type] <Object> [-ExportPath] <Obje
 The \`Export-PnPWsl2Instance\` function exports a WSL2 instance to a file.
 The type of the file can be either a tar file or a VHD file.
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Export-PnPWsl2Instance -Instance "Ubuntu-20.04" -Type "TarFile" -ExportPath "/path/to/export"
 ```
@@ -97,37 +97,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -21,9 +21,9 @@ Add-PnPWsl2Instance [-Distribution] <Object> [-InstanceName] <Object> [-Progress
 The Add-PnPWsl2Instance adds a new WSL2 instance with a specified distribution.
 Behind the scenes, it creates a folder in PnPWsl2/instances with the  instance name and will export a backup of the current instance in the PnPWsl2/images folder
 
+## EXAMPLES
 
-
-## EXAMPLE 1
+### EXAMPLE 1
 ```
 Add-PnPWsl2Instance -Distribution "Ubuntu-20.04" -InstanceName "MyInstance"
 ```
@@ -78,37 +78,3 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -80,38 +80,28 @@
 <h1 id="stop-pnpwsl2instance">Stop-PnPWsl2Instance</h1>
 
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>{{ Fill in the Synopsis }}</p>
+<p>Stops a WSL2 instance.</p>
 <h2 id="syntax">SYNTAX</h2>
 <pre><code>Stop-PnPWsl2Instance [-Instance] &lt;Object&gt; [-ProgressAction &lt;ActionPreference&gt;] [-WhatIf] [-Confirm]
  [&lt;CommonParameters&gt;]
 </code></pre>
 <h2 id="description">DESCRIPTION</h2>
-<p>{{ Fill in the Description }}</p>
-<h3 id="example-1">Example 1</h3>
-<pre><code class="lang-powershell">PS C:\&gt; {{ Add example code here }}
+<p>The Stop-PnPWsl2Instance cmdlet stops a running WSL2 instance.
+The instance to stop is specified by the Instance parameter.</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">EXAMPLE 1</h3>
+<pre><code>Stop-PnPWsl2Instance -Instance &quot;MyInstance&quot;
 </code></pre>
-<p>{{ Add example description here }}</p>
-<h3 id="-confirm">-Confirm</h3>
-<p>Prompts you for confirmation before running the cmdlet.</p>
-<pre><code class="lang-yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
+<p>This command stops the WSL2 instance named &quot;MyInstance&quot;.</p>
 <h3 id="-instance">-Instance</h3>
-<p>{{ Fill Instance Description }}</p>
+<p>Specifies the instance to stop.
+This parameter is mandatory and accepts only valid WSL2 instance names.</p>
 <pre><code class="lang-yaml">Type: Object
 Parameter Sets: (All)
 Aliases:
-Accepted values: abc, MyProjs, OnE, Ubuntu0, Ubuntu2004, Ubuntu2004-Test
 
 Required: True
-Position: 0
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -122,6 +112,18 @@ The cmdlet is not run.</p>
 <pre><code class="lang-yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-confirm">-Confirm</h3>
+<p>Prompts you for confirmation before running the cmdlet.</p>
+<pre><code class="lang-yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named
@@ -141,8 +143,6 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
-<h3 id="none">None</h3>
-<h3 id="systemobject">System.Object</h3>
 
 </article>
           </div>
@@ -152,7 +152,7 @@ Accept wildcard characters: False
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/ScoutmanPt/test/blob/main/pages/cmdlets/Stop-PnPWsl2Instance.md/#L1" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/pnp/wsl2/blob/release1.18/pages/cmdlets/Stop-PnPWsl2Instance.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
